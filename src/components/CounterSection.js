@@ -15,13 +15,13 @@ const CounterSection = () => {
     prescriptionsServed: 2650627,
     hindiPrescriptionsServed: 877645,
     doctorsWithUs: 3850,
-    happyPatients: 2768,
+    happyPatients: 180000,
   };
   const increments = {
     prescriptionsServed: 1156,
     hindiPrescriptionsServed: 369,
-    doctorsWithUs: 1,
-    happyPatients: 27,
+    doctorsWithUs: 50,
+    happyPatients: 5000,
   };
 
   // Function to get incremented stats on each visit

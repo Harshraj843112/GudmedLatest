@@ -58,7 +58,7 @@ const Slider = () => {
   return (
     <div className="flex flex-col items-center justify-center bg-white">
       {/* Text Carousel Section */}
-      <div className="relative w-full px-4 py-6 sm:py-16 flex flex-col items-center sm:mt-10 ">
+      <div className="relative w-full h-auto px-4 py-6 sm:py-16 flex flex-col items-center sm:mt-10 ">
         <div className="relative w-full">
           {/* AliceCarousel for Text Transition */}
           <AliceCarousel
@@ -70,7 +70,7 @@ const Slider = () => {
                 className="text-container animate__animated animate__slideInRight animate__faster"
                 key={index}
               >
-                <h1 className="text-gray-800 text-center text-3xl sm:text-4xl md:text-5xl lg:text-9xl xl:text-9xl font-semibold leading-tight">
+                <h1 className="text-gray-800 text-center text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-9xl font-semibold leading-tight">
                   {/* Title with animation */}
                   {slide.title.split(/<br\s*\/?>/).map((chunk, i) => (
                     <React.Fragment key={i}>
