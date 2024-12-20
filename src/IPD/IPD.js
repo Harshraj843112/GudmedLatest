@@ -13,7 +13,7 @@ const IPDHomeIPD = () => {
 </h1>
 <p className="text-center text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
 Experience seamless care and efficient discharge processes with GudMed’s 
-<br></br>10-Minute Discharge Summary.
+<br></br>10 Minutes Discharge Summary.
 </p>
 
       {/* Hero/Image Slider Section for IPD Home */}

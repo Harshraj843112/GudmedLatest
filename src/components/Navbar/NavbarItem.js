@@ -39,14 +39,14 @@ const NavbarItem = ({
         <span className="whitespace-nowrap">{list}</span>
 
         {/* Arrow Icon */}
-        <ArrowRightRoundedIcon
+        {/* <ArrowRightRoundedIcon
           size={16}
           className={`rotate-45 transition-transform ${
             isFirstItem
               ? "text-white transform hover:translate-x-1"
               : "text-black transform hover:translate-x-1"
           }`}
-        />
+        /> */}
       </Link>
 
       {/* Render Dropdown or Children */}

@@ -15,6 +15,7 @@ const slides = [
     gradientWords: ["GudMed", "AI", "Power"],
     gradient: "bg-gradient-to-r from-blue-400 via-green-500 to-teal-500",
   },
+  
 ];
 
 const Slider = () => {
@@ -117,7 +118,7 @@ const Slider = () => {
 
       {/* Static Image Section */}
       <div className="w-full flex justify-center mt-8 sm:mt-12 px-4 sm:mb-80 md:mb-12 lg:mb-16">
-        <div className="w-full h-48 sm:h-64 md:h-80 lg:h-[600px] rounded-lg shadow-md overflow-hidden">
+        <div className="w-full h-80 sm:h-64 md:h-80 lg:h-[800px] rounded-lg shadow-md overflow-hidden">
           <video
             className="w-full h-full object-cover"
             autoPlay

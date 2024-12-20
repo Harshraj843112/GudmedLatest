@@ -228,9 +228,9 @@ const FeaturesSection = () => {
     {/* Step 1 */}
     <div className="flex flex-col gap-4 items-center w-full sm:w-1/4 p-4">
       <div className="bg-gradient-to-r from-[#2E4168] to-[#4A5C84] text-white p-6 rounded-2xl shadow-2xl transform transition duration-300 hover:scale-110">
-        <div className="font-bold text-2xl mb-2">Step 1:</div>
+        <div className="font-bold text-2xl mb-2">Step 1</div>
       </div>
-      <p className="text-lg text-gray-700 leading-relaxed text-center w-[400px]">
+      <p className="text-lg text-gray-700 leading-relaxed text-center w-[390px]">
         Doctors continue to do what they do best- writing prescriptions with pen and paper.
       </p>
     </div>
@@ -238,7 +238,7 @@ const FeaturesSection = () => {
     {/* Step 2 */}
     <div className="flex flex-col gap-4 items-center w-full sm:w-1/3 p-4">
       <div className="bg-gradient-to-r from-[#2E4168] to-[#4A5C84] text-white p-6 rounded-2xl shadow-2xl transform transition duration-300 hover:scale-110">
-        <div className="font-bold text-2xl mb-2">Step 2:</div>
+        <div className="font-bold text-2xl mb-2">Step 2</div>
       </div>
       <p className="text-lg text-gray-700 leading-relaxed text-center w-[400px]">
         Simply scan the handwritten prescription using the GudMed Smart Camera.
@@ -248,7 +248,7 @@ const FeaturesSection = () => {
     {/* Step 3 */}
     <div className="flex flex-col gap-4 items-center w-full sm:w-1/3 p-4">
       <div className="bg-gradient-to-r from-[#2E4168] to-[#4A5C84] text-white p-6 rounded-2xl shadow-2xl transform transition duration-300 hover:scale-110">
-        <div className="font-bold text-2xl mb-2">Step 3:</div>
+        <div className="font-bold text-2xl mb-2">Step 3</div>
       </div>
       <p className="text-lg text-gray-700 leading-relaxed text-center w-[400px]">
         Press the spacebar, then enter—your digital prescription is ready to go!

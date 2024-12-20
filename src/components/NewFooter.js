@@ -1,5 +1,5 @@
 import React from 'react';
-import Gudmed from "../img/Gudmed1.png";
+import Gudmed from "../img/Gudmed1-removebg-preview.png";
 
 const socialIcons = [
     { iconClass: "fab fa-facebook-f", link: "https://www.facebook.com/GudMedicare/" },
@@ -15,7 +15,7 @@ const NewFooter = () => {
             <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row justify-between items-start">
                 {/* Left Content */}
                 <div className="mb-6 lg:mb-0 w-full lg:w-1/4">
-                    <p className="mb-4">
+                    <p className="mb-4 font-sans">
                         Gudmed's unique platform converts prescriptions into digital form, creates secure health records, sends dosage reminders, and allows patients to track vitals. This service is clinic-agnostic and can be accessed anytime via WhatsApp.
                     </p>
                 </div>
@@ -49,11 +49,11 @@ const NewFooter = () => {
             </div>
 
             {/* Bottom Section */}
-            <div className="mt-8 border-t border-[#3974eb] pt-4 flex flex-col lg:flex-row justify-between items-center lg:items-start w-full px-4 lg:px-12">
-                <p className="text-center lg:text-left">©2024 Infia Global IT Services Pvt Ltd. All Rights Reserved.</p>
+            <div className="mt-8 border-t border-[#3974eb] pt-4 flex flex-col lg:flex-row justify-between items-center lg:items-start w-full px-4 lg:px-12 gap-4">
+                <p className="text-center lg:text-left mt-10 ">©2024 GudMed  All Rights Reserved.</p>
 
                 {/* Gudmed Logo */}
-                <img src={Gudmed} alt="Gudmed logo" className='h-10 bg-[#2E4168]' />
+                <img src={Gudmed} alt="Gudmed logo" className='h-16 bg-white' />
 
                 <p className="mt-2 text-center lg:text-left">
                     <a href="#" className="underline hover:text-gray-300">Privacy Policy</a> |

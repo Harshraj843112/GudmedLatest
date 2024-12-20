@@ -28,8 +28,7 @@ const Home = () => {
     <div className="flex flex-col space-y-0 overflow-hidden"> {/* This removes any vertical gap between the components */}
     
       <Slider />
-      <OurClient></OurClient>
-
+     
       <HeroSection></HeroSection>
       <AnimatedText></AnimatedText>
       <ImageComparison></ImageComparison>

@@ -5,7 +5,7 @@ const KnowledgePartnerItem = ({ image, title }) => {
     <div className="bg-white shadow-xl rounded-md overflow-hidden transition-transform duration-300 transform  hover:shadow-2xl">
       {/* Card with hover effect */}
       <img
-        className="w-full h-40 sm:h-48 object-contain rounded-t-lg transition-all duration-300 transform "
+        className="w-full h-40 sm:h-32 object-contain rounded-t-lg transition-all duration-300 transform "
         src={image}
         alt={`${title} logo`}
       />
