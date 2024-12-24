@@ -15,14 +15,14 @@ const NavbarItem = ({
 
   // Toggle dropdown for mobile view
   const handleDropdownToggle = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+    setIsDropdownOpen((prevState) => !prevState);
   };
 
   return (
     <li
-      className={`relative flex items-center gap-2 cursor-pointer transition-all duration-300 ${
+      className={`relative flex items-center gap-2 cursor-pointer transition-all duration-200 ease-in-out ${
         isFirstItem
-          ? "bg-[#2E4168] text-white px-6 py-3 rounded-full shadow-lg "
+          ? "bg-[#2E4168] text-white px-6 py-3 rounded-full shadow-lg"
           : isActive
           ? "bg-slate-100 text-black px-6 py-3 rounded-full shadow-md"
           : "hover:text-gray-700 px-5 py-2 rounded-full hover:bg-slate-200"
@@ -38,15 +38,17 @@ const NavbarItem = ({
       >
         <span className="whitespace-nowrap">{list}</span>
 
-        {/* Arrow Icon */}
-        {/* <ArrowRightRoundedIcon
-          size={16}
-          className={`rotate-45 transition-transform ${
-            isFirstItem
-              ? "text-white transform hover:translate-x-1"
-              : "text-black transform hover:translate-x-1"
-          }`}
-        /> */}
+        {/* Conditionally render the ArrowRightRoundedIcon only for "Hospital" */}
+        {list === "Hospital" && (
+          <ArrowRightRoundedIcon
+            size={16}
+            className={`rotate-45 transition-transform duration-200 ease-in-out ${
+              isFirstItem
+                ? "text-white transform hover:translate-x-1"
+                : "text-black transform hover:translate-x-1"
+            }`}
+          />
+        )}
       </Link>
 
       {/* Render Dropdown or Children */}
@@ -54,7 +56,7 @@ const NavbarItem = ({
         <div
           className={`absolute ${
             isActive || isDropdownOpen ? "block" : "hidden"
-          } top-full left-0 mt-2 bg-white shadow-lg rounded-lg w-full sm:w-auto z-50`}
+          } top-full left-0 mt-2 bg-white shadow-lg rounded-lg w-full sm:w-auto z-50 transition-all duration-200 ease-in-out`}
         >
           {children}
         </div>

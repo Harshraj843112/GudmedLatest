@@ -103,9 +103,9 @@ const Slider = () => {
         {/* Navigation Buttons */}
         <button
           onClick={handlePrev}
-          className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-[#2E4168] w-12 h-12 sm:w-14 sm:h-14 rounded-full text-white hover:bg-customDark shadow-lg flex items-center justify-center transition-all duration-300 z-50"
+          className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-[#2E4168]  w-12 h-12 sm:w-14 sm:h-14 rounded-full text-white hover:bg-customDark shadow-lg flex items-center justify-center transition-all duration-300 z-50"
         >
-          <FaChevronLeft size={24} />
+          <FaChevronLeft size={24}  />
         </button>
 
         <button

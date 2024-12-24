@@ -3,45 +3,7 @@ const NavList = [
     id: "1",
     list: "ABOUT US",
     link: "/about", // Assuming "HOME" links to the homepage
-    // dropdown: [
-    //   {
-    //     title: "Artificial Intelligence",
-    //     items: [
-    //       "Neural Networks",
-    //       "AI Agency",
-    //       "Image Generator",
-    //       "Voice Generator",
-    //       "Chatbot",
-    //       "AI Solutions",
-    //     ],
-    //   },
-    //   {
-    //     title: "AI Services",
-    //     items: [
-    //       "AI Marketing",
-    //       "AI Startup",
-    //       "Vision",
-    //       "AI Consulting",
-    //       "Video Voiceover",
-    //       "AI Software / SAAS",
-    //       "Science Lab",
-    //     ],
-    //   },
-    //   {
-    //     title: "Creative Bureau",
-    //     items: [
-    //       "IT Services",
-    //       "Business",
-    //       "Gadget",
-    //       "Application",
-    //       "Intro",
-    //       "Dark Version",
-    //     ],
-    //   },
-    //   {
-    //     image: require("../../img/NavbarImg.jpg"), // Adjust the path as needed
-    //   },
-    // ],
+   
   },
   {
     id: "2",
@@ -64,19 +26,24 @@ const NavList = [
   },
   {
     id: "4",
+    list: "Patients",
+    link: "/patients", // Assuming this links to the doctors' page
+  },
+  {
+    id: "5",
     list: "Services",
     link: "/services", // Assuming a link to a services page
   },
   {
-    id: "5",
+    id: "6",
     list: "TEAM",
     link: "/team", // Assuming a link to a team page
   },
-  {
-    id: "6",
-    list: "Contact",
-    link: "/contacts", // Assuming a link to a contact page
-  },
+  // {
+  //   id: "7",
+  //   list: "Contact",
+  //   link: "/contacts", // Assuming a link to a contact page
+  // },
 ];
 
 export default NavList;

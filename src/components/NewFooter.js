@@ -2,11 +2,16 @@ import React from 'react';
 import Gudmed from "../img/Gudmed1-removebg-preview.png";
 
 const socialIcons = [
+    {
+        iconClass: "fab fa-whatsapp",
+        link: "https://wa.me/919999196828", // WhatsApp direct link
+    },
     { iconClass: "fab fa-facebook-f", link: "https://www.facebook.com/GudMedicare/" },
     { iconClass: "fab fa-twitter", link: "https://x.com/GudMedicare" },
     { iconClass: "fab fa-instagram", link: "https://www.instagram.com/gudmedicare/" },
     { iconClass: "fab fa-youtube", link: "https://www.youtube.com/channel/UC2qkjYWuIsmEuQ5dnMV3l9Q" },
-    { iconClass: "fab fa-linkedin", link: "https://www.linkedin.com/company/gudmed/" }
+    { iconClass: "fab fa-linkedin", link: "https://www.linkedin.com/company/gudmed/" },
+
 ];
 
 const NewFooter = () => {
@@ -23,12 +28,14 @@ const NewFooter = () => {
                 {/* Right Content */}
                 <div className="w-full lg:w-1/2 text-left lg:text-right">
                     {/* Phone Number with Icon */}
-                    <div className="flex items-center space-x-2 mb-4 justify-start lg:justify-end">
-                        <i className="fas fa-phone-alt text-lg"></i>
-                        <a href="tel:+919999196828" className="text-lg text-white">
-                            +91-9999196828
-                        </a>
-                    </div>
+                    
+                    <div className="flex items-center gap-x-4 mb-4 justify-start lg:justify-end">
+  <a href="tel:+919999196828" className="text-lg text-white flex items-center">
+    <i className="fas fa-phone-alt text-lg rotate-90 ml-4"></i>
+    <span className="ml-2">+91-9999196828</span>
+  </a>
+</div>
+
                     <p className="mb-4">MON–SAT 10AM–6PM</p>
                     <p className="mb-4">
                         {/* Email Address as Clickable */}
@@ -38,7 +45,7 @@ const NewFooter = () => {
                     </p>
 
                     {/* Social Media Icons */}
-                    <div className="flex justify-start lg:justify-end space-x-4 text-xl">
+                    <div className="flex justify-start lg:justify-end space-x-4 text-xl  ">
                         {socialIcons.map((icon, index) => (
                             <a key={index} href={icon.link} className="hover:text-gray-300">
                                 <i className={icon.iconClass}></i>

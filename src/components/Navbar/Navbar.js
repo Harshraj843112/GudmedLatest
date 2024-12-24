@@ -56,7 +56,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex flex-1 justify-center">
+        <div className="hidden md:flex flex-1 justify-center ml-52">
           <ul className="flex gap-4 lg:gap-4 -ml-80 items-center font-medium text-sm lg:text-base xl:text-lg">
             {NavList.map((item) => (
               <li
@@ -81,13 +81,13 @@ const Navbar = () => {
         </div>
 
         {/* Get in Touch Button */}
-        {/* <div className="hidden md:flex items-center justify-end flex-shrink-0">
+        <div className="hidden md:flex items-center justify-end flex-shrink-0">
           <Link to="/contacts">
             <button className="px-4 py-2 sm:px-5 sm:py-3 md:px-6 md:py-3 xl:px-8 xl:py-4 text-sm sm:text-base md:text-lg xl:text-xl font-semibold rounded-full border border-[#2E4168] text-black transition hover:bg-[#2E4168] hover:text-white md:mx-2 lg:mx-4">
-              Get in touch
+              Contacts
             </button>
           </Link>
-        </div> */}
+        </div>
       </div>
 
       {/* Mobile Navigation */}

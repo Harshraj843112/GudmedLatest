@@ -18,6 +18,7 @@ import IPDHomeIPD from './IPD/IPD';
 import OPDHome from './components/OPD/OPDHome';
 import TeamHome from './components/Team/TeamHome';
 import NewFooter from './components/NewFooter';
+import Patient from './components/Patient';
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="/doctors" element={<DoctorHome></DoctorHome>}></Route>
         <Route path="/hospital/ipd" element={<IPDHomeIPD></IPDHomeIPD>}></Route>
         <Route path="/hospital/opd" element={<OPDHome></OPDHome>}></Route>
+        <Route path="/patients" element={<Patient></Patient>}></Route>
       </Routes>
       {/* <Footer></Footer> */}
       <NewFooter></NewFooter>
