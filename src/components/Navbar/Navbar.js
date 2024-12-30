@@ -16,8 +16,13 @@ const Navbar = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    const debounceResize = () => {
+      clearTimeout(window.resizeTimer);
+      window.resizeTimer = setTimeout(handleResize, 300);
+    };
+
+    window.addEventListener("resize", debounceResize);
+    return () => window.removeEventListener("resize", debounceResize);
   }, []);
 
   const handleMouseEnter = (list) => {
@@ -28,6 +33,11 @@ const Navbar = () => {
     if (!isMobile) setActiveDropdown(null);
   };
 
+  const handleDropdownToggle = (list, event) => {
+    if (event) event.stopPropagation(); // Prevent event propagation
+    setActiveDropdown((prev) => (prev === list ? null : list));
+  };
+
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
@@ -35,18 +45,16 @@ const Navbar = () => {
   return (
     <div className="p-4 bg-gray-100">
       <div className="bg-white shadow-md rounded-lg px-4 py-4 sm:py-6 md:py-6 lg:px-12 flex items-center justify-between flex-wrap">
-
         {/* Logo */}
         <div className="flex items-center flex-shrink-0">
-  <Link to="/">
-    <img
-      src={Logo || "https://via.placeholder.com/150"} // Fallback image for debugging
-      alt="logo"
-      className="h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 w-auto md:mx-2 lg:mx-4"
-    />
-  </Link>
-</div>
-
+          <Link to="/">
+            <img
+              src={Logo || "https://via.placeholder.com/150"} // Fallback image for debugging
+              alt="logo"
+              className="h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 w-auto md:mx-2 lg:mx-4"
+            />
+          </Link>
+        </div>
 
         {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center justify-end">
@@ -64,6 +72,7 @@ const Navbar = () => {
                 className="relative"
                 onMouseEnter={() => handleMouseEnter(item.list)}
                 onMouseLeave={handleMouseLeave}
+                onClick={(e) => handleDropdownToggle(item.list, e)}
               >
                 <NavbarItem
                   list={item.list}
@@ -71,8 +80,8 @@ const Navbar = () => {
                   isActive={activeDropdown === item.list}
                 />
                 {item.dropdown && activeDropdown === item.list && (
-                  <div className="absolute top-full left-0 z-20 bg-white shadow-lg rounded-md p-2">
-                    <NavbarDropdown dropdown={item.dropdown} isMobile={isMobile} />
+                  <div className="absolute top-full left-0 z-20 bg-white shadow-lg rounded-md p-2 ">
+                    <NavbarDropdown key={item.id} dropdown={item.dropdown} isMobile={isMobile} />
                   </div>
                 )}
               </li>
@@ -95,18 +104,29 @@ const Navbar = () => {
         <div className="md:hidden mt-4 bg-white rounded-lg shadow-lg p-4">
           <ul className="flex flex-col gap-4 text-sm sm:text-base">
             {NavList.map((item) => (
-              <NavbarItem key={item.id} list={item.list} link={item.link}>
-                {item.dropdown && (
-                  <NavbarDropdown dropdown={item.dropdown} isMobile={isMobile} />
+              <li
+                key={item.id}
+                className="relative"
+                onClick={(e) => handleDropdownToggle(item.list, e)}
+              >
+                <NavbarItem
+                  list={item.list}
+                  link={item.link}
+                  isActive={activeDropdown === item.list}
+                />
+                {item.dropdown && activeDropdown === item.list && (
+                  <div className="mt-8 mb-28">
+                    <NavbarDropdown key={item.id} dropdown={item.dropdown} isMobile={isMobile} />
+                  </div>
                 )}
-              </NavbarItem>
+              </li>
             ))}
           </ul>
-          {/* <Link to="/contacts">
-            <button className="mt-6 w-full px-4 py-3 text-sm sm:text-base font-semibold rounded-full border border-red-500 text-black transition hover:bg-[#2E4168] hover:text-white">
+          <Link to="/contacts">
+            <button className="mt-6 w-full px-4 py-3 text-sm sm:text-base font-semibold rounded-full border border-[#2E4168] text-black transition hover:bg-[#2E4168] hover:text-white">
               Get in touch
             </button>
-          </Link> */}
+          </Link>
         </div>
       )}
     </div>

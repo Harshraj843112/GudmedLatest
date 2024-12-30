@@ -1,5 +1,6 @@
 import React from "react";
 import { FaHandsHelping, FaRegSmileBeam, FaPiggyBank, FaBrain } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const benefits = [
   {
@@ -61,9 +62,12 @@ const CTASection = () => {
       <p className="text-base text-gray-800 mb-8 sm:text-lg md:text-xl">
       Embrace GudMed’s smart hospital solutions and leave behind the inefficiencies of physical records and manual processes. Together, we can revolutionize how hospitals operate, ensuring better outcomes for patients and streamlined efficiency for healthcare providers.
       </p>
-      <button className="px-6 py-3 bg-[#2E4168] text-white font-semibold rounded-full shadow-lg transition-all duration-300 hover:bg-blue-700 sm:px-8 sm:py-4">
+      <Link to="/contacts">
+      <button className="px-6 py-3 bg-[#2E4168] text-white font-semibold rounded-full shadow-lg transition-all duration-300 hover:bg-[#2f4e87] sm:px-8 sm:py-4">
         Get Started with GudMed
       </button>
+      </Link>
+      
     </section>
   );
 };

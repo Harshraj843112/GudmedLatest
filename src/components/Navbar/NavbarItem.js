@@ -11,25 +11,17 @@ const NavbarItem = ({
   children,
   isFirstItem,
 }) => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  // Toggle dropdown for mobile view
-  const handleDropdownToggle = () => {
-    setIsDropdownOpen((prevState) => !prevState);
-  };
-
   return (
     <li
       className={`relative flex items-center gap-2 cursor-pointer transition-all duration-200 ease-in-out ${
         isFirstItem
-          ? "bg-[#2E4168] text-white px-6 py-3 rounded-full shadow-lg"
+          ? "bg-blue-600 text-white px-6 py-3 rounded-full shadow-md hover:shadow-lg hover:bg-blue-700"
           : isActive
-          ? "bg-slate-100 text-black px-6 py-3 rounded-full shadow-md"
-          : "hover:text-gray-700 px-5 py-2 rounded-full hover:bg-slate-200"
+          ? "bg-gray-100 text-black px-6 py-3 rounded-full shadow-md hover:shadow-lg hover:bg-gray-200"
+          : "hover:text-gray-700 px-5 py-2 rounded-full hover:bg-gray-100"
       }`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      onClick={handleDropdownToggle} // Handle dropdown toggle on mobile
     >
       {/* Wrap List Text in Link */}
       <Link
@@ -42,21 +34,19 @@ const NavbarItem = ({
         {list === "Hospital" && (
           <ArrowRightRoundedIcon
             size={16}
-            className={`rotate-45 transition-transform duration-200 ease-in-out ${
+            className={`transition-transform duration-200 ease-in-out ${
               isFirstItem
-                ? "text-white transform hover:translate-x-1"
-                : "text-black transform hover:translate-x-1"
+                ? "text-white transform hover:rotate-90"
+                : "text-black transform hover:rotate-90"
             }`}
           />
         )}
       </Link>
 
       {/* Render Dropdown or Children */}
-      {(children || isDropdownOpen) && (
+      {(children || isActive) && (
         <div
-          className={`absolute ${
-            isActive || isDropdownOpen ? "block" : "hidden"
-          } top-full left-0 mt-2 bg-white shadow-lg rounded-lg w-full sm:w-auto z-50 transition-all duration-200 ease-in-out`}
+          className={`absolute ${isActive ? "block" : "hidden"} top-full left-0 mt-2 bg-slate-100 shadow-lg rounded-lg w-full sm:w-auto z-50 transition-all duration-300 ease-in-out`}
         >
           {children}
         </div>

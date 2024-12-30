@@ -10,6 +10,14 @@ import {
   ShieldCheckIcon,
   LockClosedIcon,
 } from "@heroicons/react/24/outline";
+import { FaThumbsUp } from "react-icons/fa";
+//import { UserIcon } from '@heroicons/react/solid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import { UserIcon } from '@heroicons/react/24/solid';
+
+
 
 const ComparisonSection = () => {
   const comparisonData = [
@@ -117,8 +125,19 @@ const ComparisonSection = () => {
 
   return (
     <section className="bg-white py-12 px-1 sm:px-8 lg:px-16">
+    <h1 className="text-center text-3xl sm:text-4xl lg:text-6xl font-bold font-sans text-[#2E4168] leading-snug sm:leading-normal mt-4 mb-12 flex items-center justify-center gap-2">
+      Comparison between Other vs GudMed
+      {/* <FaThumbsUp className="text-[#2E4168] sm:text-3xl lg:text-4xl " /> */}
+    </h1> 
+
+   
+
+
+
       <div className="overflow-hidden shadow-xl rounded-lg">
         <div className="overflow-x-auto w-full">
+       
+
           <table className="table-auto min-w-full bg-white rounded-lg">
             <thead className="bg-blue-400 text-white text-sm uppercase">
               <tr>

@@ -34,8 +34,8 @@ const BenefitsList = () => {
                     <ul className="space-y-4">
                         {benefits.map((benefit, index) => (
                             <li key={index} className="flex items-center">
-                                <FaCheckCircle className="text-[#2E4168]mr-3" size={22} />
-                                <span className="text-gray-800 font-medium text-sm sm:text-base lg:text-lg">
+                                <FaCheckCircle className="text-[#2E4168] mr-3" size={22} />
+                                <span className="text-[#2E4168] font-medium text-sm sm:text-base lg:text-lg">
                                     {benefit}
                                 </span>
                             </li>

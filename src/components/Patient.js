@@ -80,6 +80,9 @@ const Patient = () => {
           <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
             Our platform ensures you have all your medical information at your fingertips, from digital prescriptions to reminders for your next medicine dose. With GudMed, you stay connected with your healthcare provider, receive timely updates, and have your entire health history securely stored. We help you understand your treatment better, offering peace of mind and making healthcare more accessible.
           </p>
+          <h2 className="text-xl sm:text-2xl font-semibold text-[#2E4168]">
+            Key Features for Patients:
+          </h2>
           
           <ul className="list-disc pl-6 text-gray-700 space-y-3">
             <li>Digital prescriptions delivered instantly</li>

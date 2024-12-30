@@ -14,37 +14,40 @@ const PatientVideo = () => {
         {/* Video Section */}
         <div className="w-full lg:w-1/2">
           <div className="relative shadow-lg rounded-lg overflow-hidden animate-zoom-right">
-            <video
-              src={GudmedVideo}
-              autoPlay
-              loop
-              muted
-              controls
+            <iframe
+              width="100%"  // Make the width 100% to maintain responsiveness
+              height="auto" // Set height to auto to maintain aspect ratio
+              style={{ aspectRatio: '16/9' }} // Ensures aspect ratio stays correct
+              src="https://www.youtube.com/embed/NUHPtQ3n6vQ"
+              title="How GudMed Works?"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
               className="w-full h-auto rounded-lg transition-transform transform hover:scale-105 hover:shadow-2xl"
-            ></video>
+            ></iframe>
           </div>
         </div>
 
         {/* Info Section */}
-        <div className="w-full lg:w-1/2 text-gray-700">
+        <div className="w-full lg:w-1/2 text-gray-700 sm:ml-0 md:ml-32">
           <div className="space-y-4">
             <p className="text-lg font-semibold text-[#2E4168]">
               Your good health is just a "Hi" away!
             </p>
             <ul className="list-disc list-inside space-y-2">
-            <li>
-  <span className="font-medium text-[#2E4168]">Send "Hi"</span> on{" "}
-  <a
-    href="https://wa.me/9999196828"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center text-[#2E4168] hover:text-[#1b2c4f] transition duration-300 "
-  >
-    <FaWhatsapp size={20} className="mr-2" />
-    <span className="text-[#2E4168]">9999196828</span>
-  </a>
-</li>
-
+              <li>
+                <span className="font-medium text-[#2E4168]">Send "Hi"</span> on{" "}
+                <a
+                  href="https://wa.me/9999196828"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-[#2E4168] hover:text-[#1b2c4f] transition duration-300 "
+                >
+                  <FaWhatsapp size={20} className="mr-2" />
+                  <span className="text-[#2E4168]">9999196828</span>
+                </a>
+              </li>
               <li className="text-[#2E4168]">Choose your preferred language</li>
               <li className="text-[#2E4168]">Upload prescription</li>
               <li className="text-[#2E4168]">Enter your patient Full Name and email ID</li>

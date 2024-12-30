@@ -16,7 +16,7 @@ const ForHospitalHome = () => {
             {/* Hospital Feature Card */}
             
             <HospitalFeatureCard
-                imageSrc={Ncamera}
+                imageSrc={Ncamera} 
                 title="Transform Your Hospital into a Complete Smart Hospital with GudMed"
                 description="In today's fast-evolving healthcare landscape, hospitals need to go beyond traditional systems to remain efficient, patient-centric, and operationally effective. GudMed helps your hospital transition into a smart hospital, where processes are automated, patient care is seamless, and data management is no longer dependent on outdated methods like archiving MRD files for years.
 With GudMed, you can eliminate cumbersome manual record-keeping, improve patient outcomes, and streamline hospital operations—all through advanced, real-time technology solutions."

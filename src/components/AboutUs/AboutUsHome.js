@@ -4,7 +4,7 @@ import AboutUsImage from "../../img/AboutUs.pnj.png"; // Adjust the path if need
 
 // Reusable Component for Section Title
 const SectionTitle = ({ title }) => (
-  <h2 className="text-3xl md:text-4xl font-extrabold text-center text- mb-8 ">
+  <h2 className="text-3xl md:text-4xl font-extrabold text-center text- mb-8 text-[#2E4168]">
     {title}
   </h2>
 );
@@ -25,9 +25,9 @@ const AboutSection = ({ title, text, image }) => (
     <div className="w-full md:w-1/2">
       <div className="flex items-center space-x-3 mb-4">
         <FaHandsHelping className="text-[#2E4168] text-3xl" />
-        <h3 className="text-2xl md:text-3xl font-bold text-gray-800">{title}</h3>
+        <h3 className="text-2xl md:text-3xl font-bold text-[#2E4168]">{title}</h3>
       </div>
-      <p className="text-gray-700 text-base md:text-lg leading-relaxed">{text}</p>
+      <p className="text-[#2E4168]text-base md:text-lg leading-relaxed">{text}</p>
     </div>
   </div>
 );
@@ -39,7 +39,7 @@ const MissionSection = ({ mission }) => (
       <FaHeartbeat className="text-red-500 text-3xl" />
       <h3 className="text-xl md:text-2xl font-bold text-[#2E4168]">Our Mission</h3>
     </div>
-    <p className="text-gray-700 text-base md:text-lg leading-relaxed">{mission}</p>
+    <p className="text-[#2E4168] text-base md:text-lg leading-relaxed">{mission}</p>
   </div>
 );
 

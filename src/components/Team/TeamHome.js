@@ -13,19 +13,19 @@ const teamMembers = [
     {
         // image: FounderImage,
         title: "Founder",
-        name: "Atul",
+        name: "Mr. Atul Tiwari",
         description: "Atul is a Startup Entrepreneur with 18+ years of tech and sales experience, co-founding 3 companies including ventures with Birla and Tata.",
     },
     {
         // image: COOImage,
         title: "COO",
-        name: "Dhruv",
+        name: "Mr. Dhruv Sharma",
         description: "Dhruv has over 10 years of experience in operations, contributing to two successful startups, and expertise in IoT engineering and design.",
     },
     {
         // image: CTOImage,
         title: "CTO",
-        name: "Ashish",
+        name: " Mr. Ashish Shukla",
         description: "With 16+ years of experience, Ashish is certified in PMP, Scrum, and Oracle, and has developed solutions for warehouse processes using technology.",
     },
 ];
