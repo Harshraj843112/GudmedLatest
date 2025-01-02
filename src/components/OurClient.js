@@ -47,30 +47,35 @@ const OurClient = () => {
       <div className="w-11/12 mx-auto">
         <Swiper
           spaceBetween={14}
-          slidesPerView={4} // Show 4 slides at a time
-          slidesPerGroup={4} // Move 1 slide at a time
+          slidesPerView={4} // Default for large screens
+          slidesPerGroup={4}
           modules={[Autoplay]}
           autoplay={{
-            delay: 0, // No delay for continuous sliding
-            disableOnInteraction: false, // Keep autoplay active even after interaction
+            delay: 0,
+            disableOnInteraction: false,
           }}
-          speed={3000} // Faster sliding speed
-          loop={true} // Enable infinite loop
+          speed={5000}
+          loop={true}
           breakpoints={{
             1200: {
               slidesPerView: 4,
+              slidesPerGroup: 4,
             },
             1024: {
-              slidesPerView: 4,
+              slidesPerView: 3,
+              slidesPerGroup: 3,
             },
             768: {
               slidesPerView: 3,
+              slidesPerGroup: 3,
             },
             480: {
               slidesPerView: 2,
+              slidesPerGroup: 2, // Adjust slidesPerGroup to 2 for mobile devices
             },
             320: {
               slidesPerView: 2,
+              slidesPerGroup: 2, // Ensure only 2 slides move at a time for smaller screens
             },
           }}
         >

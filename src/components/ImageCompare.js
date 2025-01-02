@@ -22,14 +22,14 @@ const ImageSection = ({ title, beforeImage, afterImage }) => (
 const ImageComparison = () => {
     return (
         <div className="container mx-auto p-6 lg:p-12  bg-white rounded-lg shadow-md">
-            <h1 className="text-center text-3xl md:text-4xl font-extrabold mb-8 text-[#2E4168] font-sans">
+            <h1 className=" text-center text-4xl md:text-5xl  mb-8 text-[#2E4168] font-semibold">
                 Sample Prescription
             </h1>
             <p className="text-center mb-6 text-lg md:text-2xl text-gray-700 font-medium font-sans">
                 <span className="text-[#2E4168] font-semibold">Move the slider</span> left and right to see the magic!
             </p>
 
-            <div className="flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-10  text-[#2E4168]">
+            <div className="flex flex-col text-3xl  md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-10  text-[#2E4168]">
                 <ImageSection title="In English" beforeImage={callBg}  afterImage={englishImage} />
                 <ImageSection title="हिन्दी में"   beforeImage={callBg} afterImage={hindiImage} />
             </div>

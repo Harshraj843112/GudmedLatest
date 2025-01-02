@@ -51,8 +51,8 @@ const ProcessStepsOPD = () => (
         {/* <ImageSlider /> */}
 
         {/* Steps Section */}
-        <h2 className="text-3xl font-bold text-center text-[#2E4168] mb-8">
-            Step-by-Step Process of OPD Prescription Digitization
+        <h2 className=" text-4xl md:text-5xl font-bold text-center text-[#2E4168] mb-10 ">
+          How GudMed Technology is important
         </h2>
 
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -76,9 +76,7 @@ const ProcessStepsOPD = () => (
 
                     {/* Step Content */}
                     <div className="p-6">
-                        <div className="text-sm font-semibold text-blue-600">
-                            Step {index + 1}
-                        </div>
+                       
                         <h3 className="text-xl font-bold text-[#2E4168] mt-2 mb-4">
                             {step.title}
                         </h3>

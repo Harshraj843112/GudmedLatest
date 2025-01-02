@@ -58,7 +58,7 @@ const TeamHome = () => {
            <DoctorsCarousel></DoctorsCarousel>
 
             {/* Team Stats */}
-            <TeamStats />
+            {/* <TeamStats /> */}
         </section>
     );
 };

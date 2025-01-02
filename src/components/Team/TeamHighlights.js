@@ -11,7 +11,7 @@ const highlights = [
         description: "Advisors from esteemed institutions like NHS UK, AIIMS, and IIT Madras.",
     },
     {
-        title: "32+ Expert Professionals",
+        title: "68+ Expert Professionals",
         description: "Our team includes engineers, data scientists, pharmacists, and doctors dedicated to healthcare innovation.",
     },
 ];

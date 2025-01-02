@@ -5,7 +5,7 @@ import { FaWhatsapp } from "react-icons/fa"; // Import WhatsApp icon
 const PatientVideo = () => {
   return (
     <div className="px-4 py-10 bg-gray-50">
-      <h1 className="text-center text-3xl font-bold text-[#2E4168] mt-10">
+      <h1 className="text-center md:text-5xl text-3xl font-bold text-[#2E4168] mt-10">
         How GudMed Works ?
       </h1>
 
@@ -37,7 +37,7 @@ const PatientVideo = () => {
             </p>
             <ul className="list-disc list-inside space-y-2">
               <li>
-                <span className="font-medium text-[#2E4168]">Send "Hi"</span> on{" "}
+                <span className="font-medium text-[#2E4168]">Say "Hi"</span> on{" "}
                 <a
                   href="https://wa.me/9999196828"
                   target="_blank"
@@ -48,12 +48,12 @@ const PatientVideo = () => {
                   <span className="text-[#2E4168]">9999196828</span>
                 </a>
               </li>
-              <li className="text-[#2E4168]">Choose your preferred language</li>
-              <li className="text-[#2E4168]">Upload prescription</li>
-              <li className="text-[#2E4168]">Enter your patient Full Name and email ID</li>
-              <li className="text-[#2E4168]">Set medicine reminders</li>
-              <li className="text-[#2E4168]">Manage Medical Records (Medilock)</li>
-              <li className="text-[#2E4168]">Use our free services</li>
+              
+              <li className="text-[#2E4168]">Upload your prescription</li>
+             
+              <li className="text-[#2E4168]">Maintain your medical Record Handy !</li>
+              {/* <li className="text-[#2E4168]">Manage Medical Records (Medilock)</li>
+              <li className="text-[#2E4168]">Use our free services</li> */}
             </ul>
           </div>
         </div>

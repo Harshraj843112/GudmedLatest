@@ -10,14 +10,6 @@ import {
   ShieldCheckIcon,
   LockClosedIcon,
 } from "@heroicons/react/24/outline";
-import { FaThumbsUp } from "react-icons/fa";
-//import { UserIcon } from '@heroicons/react/solid';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import { UserIcon } from '@heroicons/react/24/solid';
-
-
 
 const ComparisonSection = () => {
   const comparisonData = [
@@ -62,7 +54,7 @@ const ComparisonSection = () => {
       },
       gudmed: {
         text: "High integration capability with other hospital systems, pharmacies, and labs",
-        icon: <ClipboardDocumentCheckIcon className="h-6 w-6 text-green-500 inline-block mr-2" />, // Corrected this
+        icon: <ClipboardDocumentCheckIcon className="h-6 w-6 text-green-500 inline-block mr-2" />, 
       },
     },
     {
@@ -73,7 +65,7 @@ const ComparisonSection = () => {
       },
       gudmed: {
         text: "Improves operational efficiency through automated reminders, real-time pharmacy updates, and lab test offerings",
-        icon: <ClipboardDocumentCheckIcon className="h-6 w-6 text-green-500 inline-block mr-2" />, // Corrected this
+        icon: <ClipboardDocumentCheckIcon className="h-6 w-6 text-green-500 inline-block mr-2" />, 
       },
     },
     {
@@ -84,7 +76,7 @@ const ComparisonSection = () => {
       },
       gudmed: {
         text: "Engages patients with reminders for medication, follow-up appointments, and lab test notifications",
-        icon: <ClipboardDocumentCheckIcon className="h-6 w-6 text-green-500 inline-block mr-2" />, // Corrected this
+        icon: <ClipboardDocumentCheckIcon className="h-6 w-6 text-green-500 inline-block mr-2" />, 
       },
     },
     {
@@ -120,36 +112,25 @@ const ComparisonSection = () => {
         icon: <LockClosedIcon className="h-6 w-6 text-green-500 inline-block mr-2" />,
       },
     },
-    // ... Other rows here (unchanged) ...
   ];
 
   return (
-    <section className="bg-white py-12 px-1 sm:px-8 lg:px-16">
-    <h1 className="text-center text-3xl sm:text-4xl lg:text-6xl font-bold font-sans text-[#2E4168] leading-snug sm:leading-normal mt-4 mb-12 flex items-center justify-center gap-2">
-      Comparison between Other vs GudMed
-      {/* <FaThumbsUp className="text-[#2E4168] sm:text-3xl lg:text-4xl " /> */}
-    </h1> 
+    <section className="bg-white py-8 sm:px-6 lg:px-8 px-1">
+      <h1 className="text-center text-2xl sm:text-3xl lg:text-6xl font-semibold text-[#2E4168] leading-snug sm:leading-normal mt-4 mb-8">
+        Comparison between Other vs 
+        <span className="text-3xl sm:text-4xl lg:text-7xl text-[#2E4168] ml-2">
+          GudMed
+        </span>
+      </h1>
 
-   
-
-
-
-      <div className="overflow-hidden shadow-xl rounded-lg">
-        <div className="overflow-x-auto w-full">
-       
-
-          <table className="table-auto min-w-full bg-white rounded-lg">
-            <thead className="bg-blue-400 text-white text-sm uppercase">
+      <div className="overflow-hidden shadow-lg rounded-lg">
+        <div className="overflow-x-hidden w-full">
+          <table className="table-auto min-w-full bg-white rounded-lg text-sm sm:text-base ">
+            <thead className="bg-[#2E4168] text-white">
               <tr>
-                <th className="border border-blue-300 px-4 sm:px-6 py-3 text-left font-bold">
-                  Aspect
-                </th>
-                <th className="border border-blue-300 px-4 sm:px-6 py-3 text-left font-bold">
-                  Other Technology
-                </th>
-                <th className="border border-blue-300 px-4 sm:px-6 py-3 text-left font-bold text-white">
-                  GudMed Technology
-                </th>
+                <th className="border border-[#414c61] px-2 sm:px-4 py-2 sm:py-3 text-left font-bold">Aspect</th>
+                <th className="border border-[#414c61] px-2 sm:px-4 py-2 sm:py-3 text-left font-medium">Other Technology</th>
+                <th className="border border-[#414c61] px-2 sm:px-4 py-2 sm:py-3 text-left font-bold text-3xl mx-auto ">GudMed Technology</th>
               </tr>
             </thead>
             <tbody>
@@ -158,16 +139,16 @@ const ComparisonSection = () => {
                   key={index}
                   className={`${
                     index % 2 === 0 ? "bg-gray-50" : "bg-white"
-                  } hover:bg-blue-100 transition-transform duration-300`}
+                  } hover:bg-blue-50 transition-transform duration-300`}
                 >
-                  <td className="border border-gray-300 px-4 sm:px-6 py-4 text-blue-900 font-semibold">
+                  <td className="border border-gray-300 px-2 sm:px-4 py-2 sm:py-4 text-blue-900 font-bold">
                     {item.aspect}
                   </td>
-                  <td className="border border-gray-300 px-4 sm:px-6 py-4 text-gray-600">
+                  <td className="border border-gray-300 px-2 sm:px-4 py-2 sm:py-4 text-gray-600">
                     {item.other.icon}
                     {item.other.text}
                   </td>
-                  <td className="border border-gray-300 px-4 sm:px-6 py-4 text-green-700 font-medium">
+                  <td className="border border-gray-300 px-2 sm:px-4 py-2 sm:py-4 text-[#2E4168] font-bold">
                     {item.gudmed.icon}
                     {item.gudmed.text}
                   </td>

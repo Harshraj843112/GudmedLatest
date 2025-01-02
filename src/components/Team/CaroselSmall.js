@@ -1,7 +1,5 @@
-// DoctorsCarousel.js
+// DoctorsGrid.js
 import React from 'react';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
 
 const doctors = [
     {
@@ -36,35 +34,18 @@ const doctors = [
     }
 ];
 
-const responsive = {
-    desktop: { breakpoint: { max: 3000, min: 1024 }, items: 3, partialVisibilityGutter: 40 },
-    tablet: { breakpoint: { max: 1024, min: 464 }, items: 2, partialVisibilityGutter: 30 },
-    mobile: { breakpoint: { max: 464, min: 0 }, items: 1, partialVisibilityGutter: 30 },
-};
-
-const DoctorsCarousel = () => {
+const DoctorsGrid = () => {
     return (
-        <div className="w-full mt-20">
+        <div className="w-full mt-20 px-4">
             <h2 className="text-4xl font-bold text-center mt-12 mb-10 text-[#2E4168]">Our Advisory Board</h2>
-            <Carousel
-                autoPlay
-                autoPlaySpeed={5000} // Slow speed for smooth scrolling
-                infinite
-                responsive={responsive}
-                draggable
-                swipeable
-                showDots
-                containerClass="carousel-container"
-                itemClass="carousel-item-padding-40-px"
-                transitionDuration={1000} // Smooth transition duration
-            >
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {doctors.map((doctor, index) => (
-                    <div key={index} className="w-10/12 mx-auto bg-white p-4 rounded-lg shadow-lg group hover:shadow-xl transition duration-300 ease-in-out">
-                        <div className="w-full h-28 flex justify-center items-center mb-4"> {/* Adjusted container height */}
+                    <div key={index} className="bg-white p-4 rounded-lg shadow-lg group hover:shadow-xl transition duration-300 ease-in-out">
+                        <div className="w-full h-40 flex justify-center items-center mb-4">
                             <img
                                 src={doctor.image}
                                 alt={doctor.name}
-                                className="w-full h-full object-contain rounded-lg" // object-contain prevents cropping
+                                className="w-full h-full object-contain rounded-lg"
                             />
                         </div>
                         <h3 className="text-lg font-semibold text-gray-800 mb-1">{doctor.name}</h3>
@@ -72,9 +53,9 @@ const DoctorsCarousel = () => {
                         <p className="text-gray-500 mt-2 text-sm leading-relaxed">{doctor.description}</p>
                     </div>
                 ))}
-            </Carousel>
+            </div>
         </div>
     );
 };
 
-export default DoctorsCarousel;
+export default DoctorsGrid;

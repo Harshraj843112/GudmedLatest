@@ -1,6 +1,42 @@
 import React from "react";
-import { FaHospital, FaRobot, FaChartBar, FaClipboardCheck } from "react-icons/fa";
+import { FaHospital, FaRobot, FaChartBar, FaRegPaperPlane, FaHeartbeat, FaMedkit,FaClipboardCheck } from "react-icons/fa";
 import { FiSettings, FiActivity } from "react-icons/fi";
+import { motion } from "framer-motion";
+
+
+const cardsData = [
+  { icon: FaHospital, title: "EMR Integration", description: "Seamless EMR and hospital system integration." },
+  { icon: FaChartBar, title: "AI Analytics", description: "AI-powered data analytics for actionable insights." },
+  { icon: FiSettings, title: "Document Digitization", description: "Real-time document digitization and processing." },
+  { icon: FiActivity, title: "Automated Workflows", description: "Automated workflows for improved efficiency." },
+];
+
+const motionCardsData = [
+  {
+    icon: FaRegPaperPlane,
+    title: "Revolutionizing Healthcare",
+    description: "Experience seamless patient care with GudMed's cutting-edge technology. From digital prescriptions to real-time updates, revolutionize your healthcare journey.",
+    bgColor: "#FF6F61",
+  },
+  {
+    icon: FaRobot,
+    title: "AI-Powered Solutions for Smarter Hospitals",
+    description: "Enhance operational efficiency with GudMed's AI integration. Quick discharge summaries, proactive patient engagement, and streamlined workflows—all in one place.",
+    bgColor: "#00A9E0",
+  },
+  {
+    icon: FaHeartbeat,
+    title: "Seamless Care Beyond the Hospital",
+    description: "GudMed bridges the gap between hospitals and patients. From timely reminders to centralized medical records, care continues wherever you go.",
+    bgColor: "#F4A300",
+  },
+  {
+    icon: FaMedkit,
+    title: "Faster Discharges, Higher Satisfaction",
+    description: "Cut down waiting times with GudMed. Speed up discharges and elevate patient satisfaction while maximizing hospital ROI.",
+    bgColor: "#F17C67",
+  },
+];
 
 const HighlightCard = ({ icon: Icon, title, description }) => (
   <div className="bg-white shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out p-6 rounded-xl flex flex-col items-center border border-gray-200 hover:border-blue-300">
@@ -10,61 +46,58 @@ const HighlightCard = ({ icon: Icon, title, description }) => (
   </div>
 );
 
-const TechnologyPage = () => (
-  <div className="bg-white min-h-screen py-12 px-6">
-    {/* Header */}
-    <div className="text-center mb-16">
-    <h1 className="text-4xl font-extrabold font-sans text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500 mb-8 p-10">
-  GudMed’s Technology
-</h1>
+const MotionCard = ({ icon: Icon, title, description, bgColor }) => (
+  <motion.div
+    className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
+    initial={{ opacity: 0, scale: 0.9 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.5 }}
+  >
+    <div className={`flex items-center justify-center mb-6 p-4 rounded-full`} style={{ backgroundColor: bgColor }}>
+      <Icon className="text-white text-5xl" />
+    </div>
+    <h4 className="text-2xl font-semibold text-[#2E4168] mb-4">{title}</h4>
+    <p className="text-[#2E4168] text-base font-medium">{description}</p>
+  </motion.div>
+);
 
-      <p className="text-gray-700 max-w-3xl mx-auto text-lg">
-        GudMed’s technology is designed to optimize healthcare operations through automation and intelligent tools. Our platform integrates seamlessly with hospital systems, enabling real-time access to patient data, reports, and medication history. The use of AI helps hospitals reduce workload, minimize errors, and deliver faster, more
-        accurate care. With our advanced digitization and data integration capabilities, you can elevate your healthcare services to the next level.
+const TechnologyPage = () => (
+  <div className="bg-white min-h-screen py-12 px-6 ">
+    <div className="text-center mb-10 -mt-16 -md:mt-20 ">
+      <h1 className="text-4xl md:text-6xl lg:text-6xl font-bold font-sans text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500 mb-1 md:mb-7 lg:mb-8 p-10 text-center">
+        GudMed’s Technology
+      </h1>
+      <p className="text-gray-700 max-w-3xl mx-auto text-lg -mt-5 -md:mt-40 -lg:mt-40 ">
+        GudMed’s technology is designed to optimize healthcare operations through automation and intelligent tools. Our platform integrates seamlessly with hospital systems, enabling real-time access to patient data, reports, and medication history.
       </p>
     </div>
 
-    {/* Technology Section */}
-    <section className="mb-20">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl font-bold text-[#2E4168] relative inline-block">
-          Technology
-          <div className="h-1 w-16 bg-[#2E4168] absolute left-1/2 -translate-x-1/2 mt-2"></div>
-        </h2>
-      </div>
+    <section className="mb-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <HighlightCard
-          icon={FaHospital}
-          title="EMR Integration"
-          description="Seamless EMR and hospital system integration."
-        />
-        <HighlightCard
-          icon={FaChartBar}
-          title="AI Analytics"
-          description="AI-powered data analytics for actionable insights"
-        />
-        <HighlightCard
-          icon={FiSettings}
-          title="Document Digitization"
-          description="Real-time document digitization and processing"
-        />
-        <HighlightCard
-          icon={FiActivity}
-          title="Automated Workflows"
-          description="Automated workflows for improved efficiency"
-        />
+        {cardsData.map((card, index) => (
+          <HighlightCard key={index} {...card} />
+        ))}
       </div>
     </section>
 
-    {/* Artificial Intelligence Section */}
-    <section>
-      <div className="text-center mb-10">
-        <h2 className="text-3xl font-bold text-[#2E4168] relative inline-block">
-          Artificial Intelligence
-          <div className="h-1 hover:block w-16 bg-[#2E4168] absolute left-1/2 -translate-x-1/2 mt-2"></div>
-        </h2>
+    <section className="py-16 bg-white">
+      <div className="container mx-auto px-2 lg:px-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+          {motionCardsData.map((card, index) => (
+            <MotionCard key={index} {...card} />
+          ))}
+        </div>
       </div>
-      <p className="text-gray-700 max-w-3xl mx-auto text-lg mb-10">
+    </section>
+    <section>
+    <div className="text-center mb-6">
+  <h2 className="text-4xl font-bold text-[#2E4168] relative inline-block bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text leading-normal">
+    Artificial Intelligence
+    <div className="h-1 w-32 bg-[#2E4168] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 absolute left-1/2 -translate-x-1/2 "></div>
+  </h2>
+</div>
+
+      <p className="text-gray-700 max-w-5xl mx-auto text-lg mb-10 ">
         Artificial intelligence is transforming healthcare, and GudMed is at the forefront of this revolution. Our AI-driven platform helps hospitals and doctors make data-backed decisions faster. From predicting patient outcomes to optimizing workflows, our AI tools improve efficiency, reduce errors, and offer a personalized healthcare experience for every patient.
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
