@@ -1,19 +1,14 @@
-
 import React from "react";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import ArrowRightRoundedIcon from "@mui/icons-material/ArrowRightRounded";
 
-const NavbarDropdown = ({ dropdown, isMobile }) => {
+const NavbarDropdown = ({ dropdown, isMobile, closeMenu }) => {
   return (
     <div
-      // className={`${
-      //   isMobile ? "absolute top-2 left-0 w-full" : "relative"
-      // } bg-[#2E4168] mt-12 md:mt-0 text-white rounded-lg shadow-lg p-2 md:px-4 z-50 border border-[#244b9a]`}
       className={`${
         isMobile ? "absolute top-2 left-0 w-full" : "relative"
       } bg-white mt-12 md:mt-0 text-black rounded-lg shadow-lg p-2 md:px-4 z-50 border border-bg-white`}
     >
-      
       <div className="grid grid-cols-1 gap-6 md:flex md:gap-8">
         {dropdown.map((section, index) => (
           <div key={index} className="flex flex-col gap-6">
@@ -38,8 +33,8 @@ const NavbarDropdown = ({ dropdown, isMobile }) => {
                     key={subIndex}
                     className="cursor-pointer hover:bg-slate-100 hover:translate-x-2 transition-transform duration-300 rounded-lg flex items-center gap-2 p-2 mb-2 text-black"
                     tabIndex="0"
+                    onClick={closeMenu} // Close menu when submenu item is clicked
                   >
-                    
                     <ArrowRightRoundedIcon
                       size={12}
                       className="text-black transition-transform duration-300 "

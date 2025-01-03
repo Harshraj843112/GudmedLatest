@@ -39,11 +39,7 @@ const NavList = [
     list: "Team",
     link: "/team", // Assuming a link to a team page
   },
-  // {
-  //   id: "7",
-  //   list: "Contact",
-  //   link: "/contacts", // Assuming a link to a contact page
-  // },
+  
 ];
 
 export default NavList;

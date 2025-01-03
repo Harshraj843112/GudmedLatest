@@ -42,12 +42,17 @@ const Navbar = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+    setActiveDropdown(null);
+  };
+
   return (
     <div className="p-4 bg-gray-100">
       <div className="bg-white shadow-md rounded-lg px-4 py-4 sm:py-6 md:py-6 lg:px-12 flex items-center justify-between flex-wrap">
         {/* Logo */}
         <div className="flex items-center flex-shrink-0">
-          <Link to="/">
+          <Link to="/" onClick={closeMobileMenu}>
             <img
               src={Logo || "https://via.placeholder.com/150"} // Fallback image for debugging
               alt="logo"
@@ -80,8 +85,13 @@ const Navbar = () => {
                   isActive={activeDropdown === item.list}
                 />
                 {item.dropdown && activeDropdown === item.list && (
-                  <div className="absolute top-full left-0 z-20 bg-white shadow-lg rounded-md p-2 ">
-                    <NavbarDropdown key={item.id} dropdown={item.dropdown} isMobile={isMobile} />
+                  <div className="absolute top-full left-0 z-20 bg-white shadow-lg rounded-md p-2">
+                    <NavbarDropdown
+                      key={item.id}
+                      dropdown={item.dropdown}
+                      isMobile={isMobile}
+                      closeMenu={closeMobileMenu} // Pass close function
+                    />
                   </div>
                 )}
               </li>
@@ -91,7 +101,7 @@ const Navbar = () => {
 
         {/* Get in Touch Button */}
         <div className="hidden md:flex items-center justify-end flex-shrink-0">
-          <Link to="/contacts">
+          <Link to="/contacts" onClick={closeMobileMenu}>
             <button className="px-4 py-2 sm:px-5 sm:py-3 md:px-6 md:py-3 xl:px-8 xl:py-4 text-sm sm:text-base md:text-lg xl:text-xl font-semibold rounded-full border border-[#2E4168] text-black transition hover:bg-[#2E4168] hover:text-white md:mx-2 lg:mx-4">
               Contacts
             </button>
@@ -100,46 +110,46 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-     {/* Mobile Navigation */}
-{mobileMenuOpen && (
-  <div className="md:hidden mt-4 bg-white rounded-lg shadow-lg p-4">
-    <ul className="flex flex-col gap-4 text-sm sm:text-base">
-      {NavList.map((item) => (
-        <li
-          key={item.id}
-          className="relative"
-          onClick={(e) => handleDropdownToggle(item.list, e)}
-        >
-          <Link
-            to={item.link}
-            className="block"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            <NavbarItem
-              list={item.list}
-              link={item.link}
-              isActive={activeDropdown === item.list}
-            />
+      {mobileMenuOpen && (
+        <div className="md:hidden mt-4 bg-white rounded-lg shadow-lg p-4">
+          <ul className="flex flex-col gap-4 text-sm sm:text-base">
+            {NavList.map((item) => (
+              <li
+                key={item.id}
+                className="relative"
+                onClick={(e) => handleDropdownToggle(item.list, e)}
+              >
+                <Link
+                  to={item.link}
+                  className="block"
+                  onClick={closeMobileMenu}
+                >
+                  <NavbarItem
+                    list={item.list}
+                    link={item.link}
+                    isActive={activeDropdown === item.list}
+                  />
+                </Link>
+                {item.dropdown && activeDropdown === item.list && (
+                  <div className="mt-4 mb-32">
+                    <NavbarDropdown
+                      key={item.id}
+                      dropdown={item.dropdown}
+                      isMobile={isMobile}
+                      closeMenu={closeMobileMenu} // Pass close function
+                    />
+                  </div>
+                )}
+              </li>
+            ))}
+          </ul>
+          <Link to="/contacts" onClick={closeMobileMenu}>
+            <button className="mt-6 w-full px-4 py-3 text-sm sm:text-base font-semibold rounded-full border border-[#2E4168] text-black transition hover:bg-[#2E4168] hover:text-white">
+              Get in touch
+            </button>
           </Link>
-          {item.dropdown && activeDropdown === item.list && (
-            <div className="mt-8 mb-28">
-              <NavbarDropdown key={item.id} dropdown={item.dropdown} isMobile={isMobile} />
-            </div>
-          )}
-        </li>
-      ))}
-    </ul>
-    <Link to="/contacts">
-      <button
-        className="mt-6 w-full px-4 py-3 text-sm sm:text-base font-semibold rounded-full border border-[#2E4168] text-black transition hover:bg-[#2E4168] hover:text-white"
-        onClick={() => setMobileMenuOpen(false)}
-      >
-        Get in touch
-      </button>
-    </Link>
-  </div>
-)}
-
+        </div>
+      )}
     </div>
   );
 };
