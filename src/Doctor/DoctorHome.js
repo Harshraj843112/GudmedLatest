@@ -32,31 +32,32 @@ const DoctorHome = () => {
             <span className="text-[#2E4168] mt-5">Digitized In Your Way</span>
           </h2>
           <div className="flex flex-row gap-4 justify-center md:justify-center sm:pl-4 ">
-            <a
-              href="https://doctor.gudmed.in/signin"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button
-                className="w-full sm:w-auto px-8 py-4 md:px-12 md:py-4 text-white bg-[#2E4168] rounded-full shadow-lg hover:bg-[#0e182c] focus:outline-none transition-transform duration-300 hover:scale-105"
-                aria-label="Sign In"
-              >
-                Sign In
-              </button>
-            </a>
-            <a
-              href="https://doctor.gudmed.in/signup"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button
-                className="w-full sm:w-auto  px-8 py-4 md:px-12 md:py-4 text-blue-600 border border-blue-600 rounded-full shadow-lg hover:bg-[#2E4168] hover:text-white focus:outline-none transition-transform duration-300 hover:scale-105"
-                aria-label="Sign Up"
-              >
-                Sign Up
-              </button>
-            </a>
-          </div>
+  <a
+    href="https://doctor.gudmed.in/signin"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <button
+      className="w-full sm:w-auto px-12 py-6 md:px-16 md:py-6 text-white bg-[#2E4168] border border-blue-600 rounded-full shadow-lg hover:bg-[#2E4168] focus:outline-none transition-transform duration-300 hover:scale-105"
+      aria-label="Sign In"
+    >
+      Sign In
+    </button>
+  </a>
+  <a
+    href="https://doctor.gudmed.in/signup"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <button
+      className="w-full sm:w-auto px-12 py-6 md:px-16 md:py-6 text-blue-600 border border-blue-600 rounded-full shadow-lg hover:bg-[#2E4168] hover:text-white focus:outline-none transition-transform duration-300 hover:scale-105"
+      aria-label="Sign Up"
+    >
+      Sign Up
+    </button>
+  </a>
+</div>
+
         </div>
       </div>
 
@@ -100,8 +101,8 @@ const DoctorHome = () => {
         </div>
        
       </div>
-      <h2 className="md:text-6xl sm:text-2xl font-semibold text-[#2E4168] text-center mt-10 ">
-            Key Features for Doctors:
+      <h2 className="md:text-6xl sm:text-4xl text-4xl  font-medium text-[#2E4168] text-center mt-10 ">
+            Key Features for Doctors
           </h2>
       {/* 3rd section  */}
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 px-4 my-12">

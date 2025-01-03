@@ -46,7 +46,7 @@ const slides = [
   {
     titleDesktop:
       "Explore how GudMed is <br> transforming healthcare <br> one innovation at a time.",
-    titleMobile: "Explore how GudMed <br>is transforming healthcare one innovation at a time.",
+    titleMobile: "Explore how GudMed is <br> transforming healthcare one innovation at a time.",
     gradientWords: ["GudMed", "transforming", "innovation"],
     gradient: "bg-gradient-to-r from-purple-400 via-pink-500 to-red-500",
   },

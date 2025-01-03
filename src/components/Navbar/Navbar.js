@@ -100,35 +100,46 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <div className="md:hidden mt-4 bg-white rounded-lg shadow-lg p-4">
-          <ul className="flex flex-col gap-4 text-sm sm:text-base">
-            {NavList.map((item) => (
-              <li
-                key={item.id}
-                className="relative"
-                onClick={(e) => handleDropdownToggle(item.list, e)}
-              >
-                <NavbarItem
-                  list={item.list}
-                  link={item.link}
-                  isActive={activeDropdown === item.list}
-                />
-                {item.dropdown && activeDropdown === item.list && (
-                  <div className="mt-8 mb-28">
-                    <NavbarDropdown key={item.id} dropdown={item.dropdown} isMobile={isMobile} />
-                  </div>
-                )}
-              </li>
-            ))}
-          </ul>
-          <Link to="/contacts">
-            <button className="mt-6 w-full px-4 py-3 text-sm sm:text-base font-semibold rounded-full border border-[#2E4168] text-black transition hover:bg-[#2E4168] hover:text-white">
-              Get in touch
-            </button>
+     {/* Mobile Navigation */}
+{mobileMenuOpen && (
+  <div className="md:hidden mt-4 bg-white rounded-lg shadow-lg p-4">
+    <ul className="flex flex-col gap-4 text-sm sm:text-base">
+      {NavList.map((item) => (
+        <li
+          key={item.id}
+          className="relative"
+          onClick={(e) => handleDropdownToggle(item.list, e)}
+        >
+          <Link
+            to={item.link}
+            className="block"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <NavbarItem
+              list={item.list}
+              link={item.link}
+              isActive={activeDropdown === item.list}
+            />
           </Link>
-        </div>
-      )}
+          {item.dropdown && activeDropdown === item.list && (
+            <div className="mt-8 mb-28">
+              <NavbarDropdown key={item.id} dropdown={item.dropdown} isMobile={isMobile} />
+            </div>
+          )}
+        </li>
+      ))}
+    </ul>
+    <Link to="/contacts">
+      <button
+        className="mt-6 w-full px-4 py-3 text-sm sm:text-base font-semibold rounded-full border border-[#2E4168] text-black transition hover:bg-[#2E4168] hover:text-white"
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        Get in touch
+      </button>
+    </Link>
+  </div>
+)}
+
     </div>
   );
 };

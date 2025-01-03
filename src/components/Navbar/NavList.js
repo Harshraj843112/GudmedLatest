@@ -1,7 +1,7 @@
 const NavList = [
   {
     id: "1",
-    list: "ABOUT US",
+    list: "About us",
     link: "/about", // Assuming "HOME" links to the homepage
    
   },
@@ -36,7 +36,7 @@ const NavList = [
   },
   {
     id: "6",
-    list: "TEAM",
+    list: "Team",
     link: "/team", // Assuming a link to a team page
   },
   // {

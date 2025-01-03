@@ -23,7 +23,7 @@ const KnowledgePartnerCardSection = () => {
       <div className="flex flex-col lg:flex-row gap-16">
         {/* Left section for AI Smart Clinics */}
         <div className="w-full lg:w-1/2 space-y-16">
-          <div className="text-center lg:text-left text-[#2E4168]">
+          <div className="text-center lg:text-left  text-[#2E4168]">
             <OfferContentSection
               titleDesktop="AI Smart Clinics For Doctors"
               titleMobile="AI Smart Clinics For Doctors"
