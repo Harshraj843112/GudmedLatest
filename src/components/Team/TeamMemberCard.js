@@ -20,11 +20,7 @@ const TeamMemberCard = ({ title, name, description }) => (
         </p>
 
         {/* Call-to-Action Button */}
-        <div className="mt-6 text-center">
-            <button className="px-6 py-2 bg-[#2E4168] text-white font-semibold rounded-lg shadow-md hover:bg-[#2E4168] transition duration-300">
-                Connect
-            </button>
-        </div>
+       
     </div>
 );
 

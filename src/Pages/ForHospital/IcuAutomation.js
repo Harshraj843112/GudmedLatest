@@ -38,12 +38,12 @@ const GudmedICUAutomation = () => {
     ];
 
     return (
-        <div className="bg-gradient-to-r from-indigo-50 to-blue-100 py-12 px-4 sm:px-8 lg:px-16">
+        <div className="bg-white  ">
             <div className="max-w-7xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#2E4168] mb-6 text-center pt-8 px-4">
+                <h2 className="text-3xl sm:text-4xl lg:text-4xl font-semibold text-[#2E4168] mb-6 text-center pt-8 px-4">
                     Revolutionizing ICU Automation with Gudmed
                 </h2>
-                <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed mb-10 text-center px-6 sm:px-20">
+                <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed mb-10 text-center px-0 sm:px-20">
                     Gudmed is transforming Intensive Care Unit (ICU) management with cutting-edge AI solutions designed to improve patient outcomes, streamline workflows, and empower healthcare professionals.
                 </p>
 

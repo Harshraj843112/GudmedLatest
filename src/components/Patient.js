@@ -180,8 +180,8 @@ const Patient = () => {
 
         {/* Content Section */}
         
-        <div className="w-full md:w-1/2 text-center md:text-left space-y-6 ">
-          <h2 className="text-3xl sm:text-4xl lg:text-3xl font-medium text-[#2E4168] text-center gap-80 ml-10">
+        <div className="w-full md:w-1/2 text-center md:text-left md:space-y-6 -space-y-10 ">
+          <h2 className="text-[1.6rem] sm:text-4xl lg:text-3xl font-medium text-[#2E4168] text-start md:text-center gap-80 ml-10">
           Better Communication with your doctor<br />
 
           </h2>
@@ -233,7 +233,7 @@ const Patient = () => {
         {/* Content Section */}
         
         <div className="w-full md:w-1/2 text-center md:text-left space-y-6 ">
-          <h2 className="text-3xl sm:text-4xl lg:text-3xl font-medium text-[#2E4168] text-center gap-80 ml-10">
+          <h2 className="text-3xl sm:text-4xl lg:text-3xl font-medium text-[#2E4168] text-center gap-80 md:ml-10">
           Reduced waiting times for discharge Summary<br />
 
           </h2>

@@ -10,72 +10,103 @@ import {
   FaPrescriptionBottle, 
   FaLock, 
   FaHospital 
-} from "react-icons/fa";
-import SmartCameraImage from "../../img/Camera.jpg";
+} from "react-icons/fa"; // Importing additional icons
+import SmartCameraImage from "../../img/Camera.jpg"; // Adjust the path to where your image is stored
 
 const GudMedSmartCamera = () => {
+  // Features list with icons
   const features = [
     { 
-      icon: <FaCamera className="text-blue-600 text-4xl" />, 
+      icon: <FaCamera className="text-blue-600 text-3xl" />, 
       title: "High-Quality Image Capture", 
-      description: "The GudMed Smart Camera is designed to capture clear, high-resolution images of handwritten prescriptions. Its smart focus and lighting adjustment features ensure that even prescriptions with poor handwriting or complex notations are captured with precision, regardless of the environment or paper quality." 
+      description: "Clear, high-resolution images ensure precision, even with poor handwriting." 
     },
     { 
-      icon: <FaCog className="text-blue-600 text-4xl" />, 
+      icon: <FaCog className="text-blue-600 text-3xl" />, 
       title: "Real-Time AI Processing", 
-      description: "Once the prescription is captured, the built-in AI software immediately processes the image. Using advanced Optical Character Recognition (OCR) technology, the smart camera accurately reads and digitizes the handwritten content. It identifies medical terms, drug names, and dosage instructions with a high level of accuracy, minimizing errors in the digitization process." 
+      description: "AI instantly processes images using OCR for accurate digitization." 
     },
     { 
-      icon: <FaServer className="text-blue-600 text-4xl" />, 
-      title: "Instant Integration with Hospital Systems", 
-      description: "The digitized prescription is instantly sent to the hospital’s Electronic Medical Record (EMR) system. This real-time integration allows the prescription to be accessed by the hospital's pharmacy, lab services, or any other relevant department without delay, ensuring smooth processing for the patient." 
+      icon: <FaServer className="text-blue-600 text-3xl" />, 
+      title: "Seamless Integration", 
+      description: "Digitized prescriptions are sent directly to hospital systems." 
     },
     { 
-      icon: <FaBolt className="text-blue-600 text-4xl" />, 
-      title: "Automatic Validation and Error Detection", 
-      description: "GudMed’s AI not only digitizes the prescription but also performs real-time validation. The system checks for inconsistencies or potential errors, such as illegible handwriting or incomplete information, and flags them for review. This ensures that prescriptions are accurate and actionable." 
+      icon: <FaBolt className="text-blue-600 text-3xl" />, 
+      title: "Automatic Validation", 
+      description: "AI detects and flags errors for review to ensure accuracy." 
     },
     { 
-      icon: <FaShieldAlt className="text-blue-600 text-4xl" />, 
-      title: "Fast and Secure Data Transfer", 
-      description: "All digitized data captured by the GudMed Smart Camera is securely transferred to the hospital’s system using encrypted channels, ensuring patient privacy and data security. This feature guarantees that sensitive health information is protected at all times during the digitization process." 
+      icon: <FaShieldAlt className="text-blue-600 text-3xl" />, 
+      title: "Secure Data Transfer", 
+      description: "Encrypted channels protect sensitive patient data." 
     },
     { 
-      icon: <FaUserFriends className="text-blue-600 text-4xl" />, 
-      title: "User-Friendly for Healthcare Staff", 
-      description: "The GudMed Smart Camera is designed with ease of use in mind. Healthcare staff can operate the camera without extensive training, and the process is fast enough to keep up with busy OPD workflows. Its intuitive design allows for rapid scanning of multiple prescriptions in a short amount of time." 
+      icon: <FaUserFriends className="text-blue-600 text-3xl" />, 
+      title: "User-Friendly Design", 
+      description: "Intuitive interface requires minimal training for healthcare staff." 
     },
   ];
 
+  // Benefits list with icons
   const benefits = [
-    { icon: <FaPrescriptionBottle className="text-green-600 text-3xl" />, text: "Speed and Efficiency: Instantly digitizes prescriptions, reducing time spent on manual data entry." },
-    { icon: <FaCheckCircle className="text-green-600 text-3xl" />, text: "High Accuracy: Uses advanced AI and OCR to minimize errors in reading and digitizing handwritten text." },
-    { icon: <FaHospital className="text-green-600 text-3xl" />, text: "Seamless Integration: Connects directly to hospital systems, ensuring prescriptions are accessible to relevant departments in real-time." },
-    { icon: <FaBolt className="text-green-600 text-3xl" />, text: "Improved Patient Experience: Speeds up workflows, reducing patient waiting time." },
-    { icon: <FaLock className="text-green-600 text-3xl" />, text: "Enhanced Security: Ensures all patient data is securely stored and transferred, safeguarding sensitive medical information." },
-    { icon: <FaUserFriends className="text-green-600 text-3xl" />, text: "Minimal Training Required: Easy to use, allowing healthcare staff to adopt the technology quickly without disruption to their routine." },
+    { 
+      icon: <FaPrescriptionBottle className="text-blue-600 text-2xl" />, 
+      text: "Reduces time spent on manual data entry." 
+    },
+    { 
+      icon: <FaCheckCircle className="text-blue-600 text-2xl" />, 
+      text: "Minimizes errors with high-accuracy OCR." 
+    },
+    { 
+      icon: <FaHospital className="text-blue-600 text-2xl" />, 
+      text: "Connects directly to hospital systems for real-time access." 
+    },
+    { 
+      icon: <FaBolt className="text-blue-600 text-2xl" />, 
+      text: "Speeds up workflows, reducing patient waiting time." 
+    },
+    { 
+      icon: <FaLock className="text-blue-600 text-2xl" />, 
+      text: "Safeguards sensitive medical data with secure protocols." 
+    },
+    { 
+      icon: <FaUserFriends className="text-blue-600 text-2xl" />, 
+      text: "Adopted quickly without disrupting routines." 
+    },
   ];
 
   return (
-    <div className="px-4 py-12 bg-gradient-to-r from-gray-100 to-gray-50">
-      <div className="container mx-auto">
-        <h2 className="text-4xl font-extrabold text-center text-[#2E4168] mb-8">
-          GudMed Smart Camera: Revolutionizing Prescription Digitization
+    <div className="flex justify-center px-4 py-10 bg-gray-100">
+      <div className="flex flex-col items-center bg-white rounded-lg shadow-lg p-8 w-full  mx-auto">
+        {/* Title Section */}
+        <h2 className="md:text-4xl text-[1.1rem] md:font-semibold font-bold  text-[#2E4168] text-center mb-8">
+        GudMed Smart Camera: Transforming Prescription Management with Cutting-Edge Digitization
         </h2>
-        <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto leading-relaxed mb-12">
-          The GudMed Smart Camera simplifies and accelerates the digitization of handwritten prescriptions in outpatient departments (OPD). With advanced imaging technology and AI-driven recognition software, this cutting-edge tool ensures accurate and efficient prescription digitization.
-        </p>
 
-        <div className="flex flex-wrap lg:flex-nowrap items-center lg:space-x-8">
-          <div className="flex justify-center lg:w-1/2 mb-8 lg:mb-0">
-            <img src={SmartCameraImage} alt="GudMed Smart Camera" className="w-full max-w-md rounded-lg shadow-lg" />
+        {/* Image and Features Section */}
+        <div className="flex flex-col lg:flex-row items-center lg:space-x-12">
+          {/* Image */}
+          <div className="w-full lg:w-1/2 flex justify-center mb-8 lg:mb-0">
+            <img
+              src={SmartCameraImage}
+              alt="GudMed Smart Camera"
+              className="w-full max-w-md h-auto object-cover rounded-lg shadow-md"
+            />
           </div>
-          <div className="lg:w-1/2">
+
+          {/* Features */}
+          <div className="w-full lg:w-1/2">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {features.map((feature, index) => (
-                <div key={index} className="flex flex-col items-center bg-white p-4 shadow-lg rounded-lg hover:shadow-xl transition duration-300">
+                <div
+                  key={index}
+                  className="flex flex-col items-center text-center p-4 border border-gray-300 rounded-lg hover:shadow-lg transition-transform duration-300 transform hover:scale-105"
+                >
                   {feature.icon}
-                  <h3 className="text-lg font-semibold text-[#2E4168] mt-4">{feature.title}</h3>
+                  <h3 className="text-lg font-bold text-[#2E4168] mt-4">
+                    {feature.title}
+                  </h3>
                   <p className="text-gray-600 text-sm mt-2">{feature.description}</p>
                 </div>
               ))}
@@ -83,15 +114,19 @@ const GudMedSmartCamera = () => {
           </div>
         </div>
 
-        <div className="mt-16">
-          <h3 className="text-2xl font-bold text-[#2E4168] text-center mb-6">
+        {/* Benefits Section */}
+        <div className="mt-10 w-full">
+          <h3 className="text-4xl font-semibold text-[#2E4168] mb-6 mt-4 text-center">
             Key Benefits of GudMed Smart Camera
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-center bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition duration-300 shadow-md">
+              <div
+                key={index}
+                className="flex items-center space-x-3 bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition duration-300"
+              >
                 {benefit.icon}
-                <span className="text-gray-800 font-medium ml-4">{benefit.text}</span>
+                <span className="text-gray-800 font-medium">{benefit.text}</span>
               </div>
             ))}
           </div>

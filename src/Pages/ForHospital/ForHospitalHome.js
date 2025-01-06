@@ -15,6 +15,7 @@ const ForHospitalHome = () => {
         <div className="w-11/12 lg:w-9/12 xl:w-8/12 flex flex-col mx-auto py-10 space-y-10  bg-gray-50 rounded-lg shadow-md">
             {/* Hospital Feature Card */}
             
+            
             <HospitalFeatureCard
                 imageSrc={Ncamera} 
                 title="Transform Your Hospital into a Complete Smart Hospital with GudMed"

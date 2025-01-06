@@ -38,7 +38,7 @@ const DoctorHome = () => {
     rel="noopener noreferrer"
   >
     <button
-      className="w-full sm:w-auto px-12 py-6 md:px-16 md:py-6 text-white bg-[#2E4168] border border-blue-600 rounded-full shadow-lg hover:bg-[#2E4168] focus:outline-none transition-transform duration-300 hover:scale-105"
+      className="w-full sm:w-auto px-10 py-5 md:px-16 md:py-6 text-white bg-[#2E4168] border border-blue-600 rounded-full shadow-lg hover:bg-[#2E4168] focus:outline-none transition-transform duration-300 hover:scale-105"
       aria-label="Sign In"
     >
       Sign In
@@ -50,7 +50,7 @@ const DoctorHome = () => {
     rel="noopener noreferrer"
   >
     <button
-      className="w-full sm:w-auto px-12 py-6 md:px-16 md:py-6 text-blue-600 border border-blue-600 rounded-full shadow-lg hover:bg-[#2E4168] hover:text-white focus:outline-none transition-transform duration-300 hover:scale-105"
+      className="w-full sm:w-auto px-10 py-5 md:px-16 md:py-6 text-blue-600 border border-blue-600 rounded-full shadow-lg hover:bg-[#2E4168] hover:text-white focus:outline-none transition-transform duration-300 hover:scale-105"
       aria-label="Sign Up"
     >
       Sign Up
@@ -64,8 +64,8 @@ const DoctorHome = () => {
       {/* Features Section */}
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 px-4 my-12">
         {/* Left: Features Content */}
-        <div className="w-full md:w-1/2 text-center md:text-left space-y-6">
-          <p className="text-base sm:text-lg text-gray-700 leading-relaxed mx-auto max-w-screen-sm">
+        <div className="w-full md:w-1/2 text-center md:text-left  space-y-6">
+          <p className="text-base sm:text-lg  md:mx-0 mx-auto text-gray-700 leading-relaxed max-w-screen-sm">
             At GudMed, we empower doctors by streamlining patient management
             through cutting-edge technology. Our platform allows you to focus
             more on patient care and less on administrative tasks. With
@@ -116,8 +116,8 @@ const DoctorHome = () => {
         </div>
 
         {/* Content Section */}
-        <div className="w-full md:w-1/2 text-center md:text-left space-y-6 ">
-          <h2 className="text-3xl sm:text-4xl lg:text-3xl font-medium text-[#2E4168] text-center gap-80 ml-10">
+        <div className="w-full md:w-1/2 text-left  md:text-left space-y-6 ">
+          <h2 className="text-[1.5rem] sm:text-4xl lg:text-3xl font-medium text-[#2E4168] md:text-center text-left gap-80 md:ml-10">
             Real-time access to patient history and reports<br />
 
           </h2>
@@ -131,7 +131,7 @@ const DoctorHome = () => {
       <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-8 px-4 my-12">
   {/* Content Section */}
   <div className="w-full md:w-1/2 text-center md:text-left space-y-6">
-    <h2 className="text-3xl sm:text-4xl lg:text-3xl font-medium text-[#2E4168] text-center md:text-left">
+    <h2 className="text-[1.6rem] sm:text-4xl lg:text-3xl font-medium text-[#2E4168]  md:text-left text-left  ">
     Automated post-care follow-ups and reminders<br />
     </h2>
     <div className="flex flex-row gap-4 justify-center md:justify-start sm:pl-4">
@@ -163,7 +163,7 @@ const DoctorHome = () => {
         {/* Content Section */}
         
         <div className="w-full md:w-1/2 text-center md:text-left space-y-6 ">
-          <h2 className="text-3xl sm:text-4xl lg:text-3xl font-medium text-[#2E4168] text-center gap-80 ml-10">
+          <h2 className="text-[1.8rem] sm:text-4xl lg:text-3xl font-medium text-[#2E4168] text-center  md:text-center gap-80 md:ml-10">
           Seamless patient communication<br />
 
           </h2>

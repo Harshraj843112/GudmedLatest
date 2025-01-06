@@ -32,9 +32,9 @@ const benefits = [
 const CTASection = () => {
   return (
     <section className="py-12 px-6 bg-gray-100 rounded-xl shadow-lg text-center md:py-16 lg:px-20">
-      <h3 className="text-2xl font-bold text-[#2E4168] mb-6 sm:text-3xl md:text-4xl">
+      <h3 className="text-2xl font-semibold text-[#2E4168] mb-6 sm:text-3xl md:text-4xl">
         The Smart Hospital of Tomorrow – Today with{" "}
-        <span className="text-blue-700">GudMed</span>
+        <span className="text-[#2E4168] font-bold">GudMed</span>
       </h3>
       <p className="text-base text-gray-800 mb-8 sm:text-lg md:text-xl">
         Transform your hospital into a smart, efficient, and patient-centered
@@ -56,7 +56,7 @@ const CTASection = () => {
           </li>
         ))}
       </ul>
-      <h4 className="text-xl font-semibold text-[#2E4168] mt-10 mb-6 sm:text-2xl md:text-3xl">
+      <h4 className="text-2xl font-semibold text-[#2E4168] mt-10 mb-6 sm:text-2xl md:text-4xl">
         Join the Future of Healthcare Today
       </h4>
       <p className="text-base text-gray-800 mb-8 sm:text-lg md:text-xl">
