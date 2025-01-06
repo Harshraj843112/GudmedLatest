@@ -67,7 +67,7 @@ const WhyGudmedUnique = () => {
     <section className="bg-white py-16 px-6 lg:px-20">
       <div className="container mx-auto">
         <motion.h2
-          className="text-4xl lg:text-5xl font-bold text-[#2E4168] text-center mb-8"
+          className="text-[1.8rem] lg:text-5xl font-bold text-[#2E4168] text-center mb-8"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -75,7 +75,7 @@ const WhyGudmedUnique = () => {
           Why GudMed is Unique  ?
         </motion.h2>
         <motion.p
-          className="text-xl font-medium text-gray-800 text-center mb-12"
+          className="text-xl font-medium text-gray-800 text-center mb-12 mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -114,18 +114,18 @@ const WhyGudmedUnique = () => {
             </motion.div>
           ))}
         </div>
-        <div className="mt-16 bg-white  py-12 px-6 rounded-xl shadow-lg text-center">
+        <div className="mt-4 bg-white  py-12 px-6 rounded-xl shadow-lg text-center">
   <div className="max-w-3xl mx-auto">
     <h3 className="text-3xl lg:text-4xl font-bold text-[#2E4168] mb-4 leading-tight">
       Join the GudMed Revolution
     </h3>
-    <p className="text-lg font-medium text-gray-700 mb-6">
+    <p className="text-lg font-medium text-gray-700 mb-6  ">
       Partner with GudMed and embrace a smarter, more efficient future for healthcare. Contact us today to learn how we can transform your healthcare operations.
     </p>
     <div className="mt-6">
       <a
         href="/contacts" // This can be changed to your contact page link
-        className="bg-[#2E4168] text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-[#1A3051] hover:shadow-lg transition-all duration-300"
+        className="bg-[#2E4168] text-white font-semibold py-4 px-6 rounded-lg shadow-md hover:bg-[#1A3051] hover:shadow-lg transition-all duration-300"
       >
         Contact Us Today
       </a>
