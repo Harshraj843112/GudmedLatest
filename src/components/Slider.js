@@ -56,13 +56,49 @@ const Slider = () => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const carouselRef = useRef();
   const [isMobile, setIsMobile] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+  const intervalRef = useRef(null);
 
   useEffect(() => {
     const updateScreenSize = () => setIsMobile(window.innerWidth < 768);
     updateScreenSize();
     window.addEventListener("resize", updateScreenSize);
+
     return () => window.removeEventListener("resize", updateScreenSize);
   }, []);
+
+  // Auto slide change every 4 seconds
+  useEffect(() => {
+    const startAutoSlide = () => {
+      intervalRef.current = setInterval(() => {
+        if (!isClicked) {
+          carouselRef.current?.slideNext();
+        }
+      }, 4000); // Change slide every 4 seconds
+    };
+
+    startAutoSlide();
+
+    return () => clearInterval(intervalRef.current); // Clear interval on component unmount
+  }, [isClicked]);
+
+  // Pause auto sliding when clicking
+  const handleClick = () => {
+    setIsClicked(true);
+    clearInterval(intervalRef.current); // Stop auto sliding
+  };
+
+  const handleMouseUp = () => {
+    setIsClicked(false);
+    intervalRef.current = setInterval(() => {
+      if (!isClicked) {
+        carouselRef.current?.slideNext();
+      }
+    }, 4000); // Restart auto sliding
+  };
+
+  const handleNext = () => carouselRef.current?.slideNext();
+  const handlePrev = () => carouselRef.current?.slidePrev();
 
   const carouselSettings = {
     autoPlay: false,
@@ -76,9 +112,6 @@ const Slider = () => {
       1024: { items: 1 },
     },
   };
-
-  const handleNext = () => carouselRef.current?.slideNext();
-  const handlePrev = () => carouselRef.current?.slidePrev();
 
   const currentSlide = slides[currentSlideIndex];
 
@@ -123,25 +156,26 @@ const Slider = () => {
   return (
     <div className="flex flex-col items-center justify-center bg-white">
       {/* Text Carousel Section */}
-      <div className="relative w-full h-auto px-4 py-6 sm:py-16 flex flex-col items-center sm:mt-10">
+      <div
+        className="relative w-full px-6 sm:px-12 lg:px-24 py-4 sm:py-8 flex flex-col items-center sm:mt-6"
+        onClick={handleClick}
+        onMouseUp={handleMouseUp}
+      >
         <div className="relative w-full">
           <AliceCarousel
             ref={carouselRef}
             {...carouselSettings}
             activeIndex={currentSlideIndex}
             items={slides.map((slide, index) => (
-              <div
-                key={index}
-                className="text-container animate__animated animate__slideInRight animate__faster"
-              >
+              <div key={index} className="text-container animate__animated animate__slideInRight animate__faster">
                 {/* Title Rendering */}
                 <h1
-                  className={`text-gray-800 text-center font-semibold leading-tight ${
+                  className={`text-gray-800 text-center font-bold leading-tight ${
                     slide.titleDesktop.length > 100
-                      ? "text-2xl sm:text-3xl lg:text-7xl"
+                      ? "text-[1.9rem] sm:text-3xl lg:text-7xl"
                       : slide.titleDesktop.length > 60
-                      ? "text-2xl sm:text-4xl lg:text-7xl"
-                      : "text-4xl sm:text-5xl lg:text-8xl"
+                      ? "text-3xl sm:text-4xl lg:text-7xl"
+                      : "text-5xl sm:text-5xl lg:text-8xl"
                   }`}
                 >
                   {renderFormattedTitle(
@@ -152,18 +186,16 @@ const Slider = () => {
                 </h1>
                 {/* Benefits Section */}
                 {slide.benefits && (
-                  <ul className="mt-8 space-y-4 px-4 ">
+                  <ul className="mt-6 space-y-3 px-6 sm:px-12">
                     {slide.benefits.map((benefit, i) => (
                       <li
                         key={i}
-                        className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 text-center "
+                        className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 text-center"
                       >
-                        <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text font-semibold text-[#2E4168] text-lg sm:text-xl md:text-2xl lg:text-3xl">
+                        <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text font-semibold">
                           {benefit.heading}
                         </span>{" "}
-                        <span className="text-xs sm:text-sm md:text-base lg:text-lg">
-                          {benefit.description}
-                        </span>
+                        <span>{benefit.description}</span>
                       </li>
                     ))}
                   </ul>
@@ -175,27 +207,22 @@ const Slider = () => {
         {/* Navigation Buttons */}
         <button
           onClick={handlePrev}
-          className="absolute left-2 sm:left-4 sm:top-1/2 top-[13rem] transform -translate-y-1/2 bg-[#2E4168] w-12 h-12 sm:w-14 sm:h-14 rounded-full text-white hover:bg-customDark shadow-lg flex items-center justify-center transition-all duration-300 z-50"
+          className="absolute left-4 sm:left-8 top-1/2 transform -translate-y-1/2 bg-[#2E4168] w-12 h-12 sm:w-14 sm:h-14 rounded-full text-white hover:bg-customDark shadow-lg flex items-center justify-center transition-all duration-300 z-50"
         >
           <FaChevronLeft size={24} />
         </button>
         <button
           onClick={handleNext}
-          className="absolute right-2 sm:right-4 sm:top-1/2 top-[13rem] transform -translate-y-1/2 bg-[#2E4168] w-12 h-12 sm:w-14 sm:h-14 rounded-full text-white hover:bg-customDark shadow-lg flex items-center justify-center transition-all duration-300 z-50"
+          className="absolute right-4 sm:right-8 top-1/2 transform -translate-y-1/2 bg-[#2E4168] w-12 h-12 sm:w-14 sm:h-14 rounded-full text-white hover:bg-customDark shadow-lg flex items-center justify-center transition-all duration-300 z-50"
         >
           <FaChevronRight size={24} />
         </button>
       </div>
+
       {/* Static Video Section */}
-      <div className="w-full flex justify-center mt-0   px-4 sm:mb-80 md:mb-12 lg:mb-16">
+      <div className="w-full flex justify-center mt-0 px-4 sm:mb-80 md:mb-12 lg:mb-16">
         <div className="w-full h-80 sm:h-64 md:h-80 lg:h-[800px] rounded-lg shadow-md overflow-hidden">
-          <video
-            className="w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-          >
+          <video className="w-full h-full object-cover" autoPlay muted loop playsInline>
             <source src={NewVideo} type="video/mp4" />
             Your browser does not support the video tag.
           </video>

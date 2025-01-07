@@ -36,21 +36,21 @@ const doctors = [
 
 const DoctorsGrid = () => {
     return (
-        <div className="w-full mt-20 px-4">
-            <h2 className="text-4xl font-bold text-center mt-12 mb-10 text-[#2E4168]">Our Advisory Board</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="w-full mt-16 px-4">
+            <h2 className="md:text-3xl text-[1.8rem] font-semibold md:text-center mt-10 mb-8 text-[#2E4168]">Our Advisory Board</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {doctors.map((doctor, index) => (
-                    <div key={index} className="bg-white p-4 rounded-lg shadow-lg group hover:shadow-xl transition duration-300 ease-in-out">
-                        <div className="w-full h-40 flex justify-center items-center mb-4">
+                    <div key={index} className="bg-white p-3 rounded-md shadow-md group hover:shadow-lg transition duration-300 ease-in-out">
+                        <div className="w-full h-32 flex justify-center items-center mb-3">
                             <img
                                 src={doctor.image}
                                 alt={doctor.name}
-                                className="w-full h-full object-contain rounded-lg"
+                                className="w-full h-full object-contain rounded-md"
                             />
                         </div>
-                        <h3 className="text-lg font-semibold text-gray-800 mb-1">{doctor.name}</h3>
-                        <p className="text-gray-600 font-medium">{doctor.title}</p>
-                        <p className="text-gray-500 mt-2 text-sm leading-relaxed">{doctor.description}</p>
+                        <h3 className="text-base font-semibold text-gray-800 mb-1">{doctor.name}</h3>
+                        <p className="text-sm text-gray-600 font-medium">{doctor.title}</p>
+                        <p className="text-xs text-gray-500 mt-1 leading-relaxed">{doctor.description}</p>
                     </div>
                 ))}
             </div>

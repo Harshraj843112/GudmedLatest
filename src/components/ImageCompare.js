@@ -22,7 +22,7 @@ const ImageSection = ({ title, beforeImage, afterImage }) => (
 const ImageComparison = () => {
     return (
         <div className="container mx-auto p-6 lg:p-12  bg-white rounded-lg shadow-md">
-            <h1 className=" text-center text-4xl md:text-5xl  mb-8 text-[#2E4168] font-semibold">
+            <h1 className=" text-center text-4xl md:text-5xl mt-6 mb-4 text-[#2E4168] font-semibold">
                 Sample Prescription
             </h1>
             <p className="text-center mb-6 text-lg md:text-2xl text-gray-700 font-medium font-sans">

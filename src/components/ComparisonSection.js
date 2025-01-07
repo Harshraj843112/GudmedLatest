@@ -116,12 +116,17 @@ const ComparisonSection = () => {
 
   return (
     <section className="bg-white py-8 sm:px-6 lg:px-8 px-1">
-      <h1 className="text-center text-2xl sm:text-3xl lg:text-6xl font-semibold text-[#2E4168] leading-snug sm:leading-normal mt-4 mb-8">
-        Comparison between Other vs 
-        <span className="text-3xl sm:text-4xl lg:text-7xl text-[#2E4168] ml-2">
-          GudMed
-        </span>
-      </h1>
+     <h1 className="text-center text-2xl sm:text-3xl lg:text-6xl font-semibold text-[#2E4168] leading-snug sm:leading-normal mt-6 mb-8 space-x-4">
+  <span className="text-3xl sm:text-4xl lg:text-7xl text-[#2E4168] ml-2 font-bold">
+    GudMed
+  </span>
+  <span className="text-3xl sm:text-4xl lg:text-7xl text-[#2E4168]">vs</span>
+  <span className="text-3xl sm:text-4xl lg:text-7xl text-[#2E4168]">
+    Other
+  </span>
+</h1>
+
+
 
       <div className="overflow-hidden shadow-lg rounded-lg">
         <div className="overflow-x-hidden w-full">

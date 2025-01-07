@@ -9,7 +9,7 @@ import Amazon from "../img/Amazon.png";
 import Patna from "../img/Aiims Patna.png";
 import Appolo from "../img/Apollo.png";
 import GangaRam from "../img/GangaRam.png";
-import RedClif from "../img/RadClif.png";
+import Kailash from "../img/kailashHospital.jpeg";
 import Jodhpur from "../img/Jodhpur.png";
 import Rishikesh from "../img/Rishikesh.png";
 import Psri from "../img/Psri.png";
@@ -30,9 +30,11 @@ const OurClient = () => {
     { src: Amazon, alt: "Amazon Pharmacy" },
     { src: GangaRam, alt: "Sir Ganga Ram Hospital" },
     { src: Psri, alt: "PSRI Hospital" },
-    { src: RedClif, alt: "Redcliffe Diagnostics" },
+   
     { src: Sharda, alt: "Sharda Hospital" },
+    { src: Kailash, alt: "Redcliffe Diagnostics" },
     { src: Appolo, alt: "Apollo Hospital" },
+    
   ];
 
   return (
