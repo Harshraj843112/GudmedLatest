@@ -11,7 +11,7 @@ import {
   FaLock, 
   FaHospital 
 } from "react-icons/fa"; // Importing additional icons
-import SmartCameraImage from "../../img/Camera.jpg"; // Adjust the path to where your image is stored
+import SmartCameraImage from "../../img/Camera-removebg-preview.png"; // Adjust the path to where your image is stored
 
 const GudMedSmartCamera = () => {
   // Features list with icons
@@ -123,7 +123,7 @@ const GudMedSmartCamera = () => {
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="flex items-center space-x-3 bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition duration-300"
+                className="flex items-center space-x-3 bg-gray-50 p-4 rounded-lg hover:bg-gray-200 transition duration-300"
               >
                 {benefit.icon}
                 <span className="text-gray-800 font-medium">{benefit.text}</span>

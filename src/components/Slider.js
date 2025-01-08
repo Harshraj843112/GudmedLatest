@@ -13,7 +13,7 @@ const slides = [
     titleDesktop:
       "Revolutionize patient care with <br> cutting-edge Artificial Intelligence <br> tailored for hospitals and<br> healthcare providers.",
     titleMobile:
-      "Revolutionize patient care with cutting-edge Artificial Intelligence tailored for hospitals and healthcare providers.",
+      "Revolutionize patient <br/> care with cutting-edge <br> Artificial Intelligence tailored for hospitals <br/> and healthcare providers.",
     gradientWords: ["Artificial Intelligence", "hospitals"],
     gradient: "bg-gradient-to-r from-purple-400 via-pink-500 to-red-500",
   },
@@ -46,7 +46,7 @@ const slides = [
   {
     titleDesktop:
       "Explore how GudMed is <br> transforming healthcare <br> one innovation at a time.",
-    titleMobile: "Explore how GudMed is <br> transforming healthcare one innovation at a time.",
+    titleMobile: "Explore how GudMed is <br>transforming healthcare <br> one innovation at a time.",
     gradientWords: ["GudMed", "transforming", "innovation"],
     gradient: "bg-gradient-to-r from-purple-400 via-pink-500 to-red-500",
   },
@@ -74,7 +74,7 @@ const Slider = () => {
         if (!isClicked) {
           carouselRef.current?.slideNext();
         }
-      }, 4000); // Change slide every 4 seconds
+      }, 2000); // Change slide every 4 seconds
     };
 
     startAutoSlide();
@@ -94,7 +94,7 @@ const Slider = () => {
       if (!isClicked) {
         carouselRef.current?.slideNext();
       }
-    }, 4000); // Restart auto sliding
+    }, ); // Restart auto sliding
   };
 
   const handleNext = () => carouselRef.current?.slideNext();
@@ -172,9 +172,9 @@ const Slider = () => {
                 <h1
                   className={`text-gray-800 text-center font-bold leading-tight ${
                     slide.titleDesktop.length > 100
-                      ? "text-[1.9rem] sm:text-3xl lg:text-7xl"
+                      ? "text-[1.5rem]   sm:text-3xl lg:text-7xl"
                       : slide.titleDesktop.length > 60
-                      ? "text-3xl sm:text-4xl lg:text-7xl"
+                      ? " mt-10 md:mt-0 text-[1.6rem] sm:text-4xl lg:text-7xl"
                       : "text-5xl sm:text-5xl lg:text-8xl"
                   }`}
                 >
@@ -186,7 +186,7 @@ const Slider = () => {
                 </h1>
                 {/* Benefits Section */}
                 {slide.benefits && (
-                  <ul className="mt-6 space-y-3 px-6 sm:px-12">
+                  <ul className="mt-6 space-y-3 mx-auto  sm:px-12">
                     {slide.benefits.map((benefit, i) => (
                       <li
                         key={i}
@@ -207,13 +207,13 @@ const Slider = () => {
         {/* Navigation Buttons */}
         <button
           onClick={handlePrev}
-          className="absolute left-4 sm:left-8 top-1/2 transform -translate-y-1/2 bg-[#2E4168] w-12 h-12 sm:w-14 sm:h-14 rounded-full text-white hover:bg-customDark shadow-lg flex items-center justify-center transition-all duration-300 z-50"
+          className="absolute left-4 sm:left-8 top-[15rem] md:top-1/2 transform -translate-y-1/2 bg-[#2E4168] w-12 h-12 sm:w-14 sm:h-14 rounded-full text-white hover:bg-customDark shadow-lg flex items-center justify-center transition-all duration-300 z-50"
         >
           <FaChevronLeft size={24} />
         </button>
         <button
           onClick={handleNext}
-          className="absolute right-4 sm:right-8 top-1/2 transform -translate-y-1/2 bg-[#2E4168] w-12 h-12 sm:w-14 sm:h-14 rounded-full text-white hover:bg-customDark shadow-lg flex items-center justify-center transition-all duration-300 z-50"
+          className="absolute right-4 sm:right-8 top-[15rem] md:top-1/2 transform -translate-y-1/2 bg-[#2E4168] w-12 h-12 sm:w-14 sm:h-14 rounded-full text-white hover:bg-customDark shadow-lg flex items-center justify-center transition-all duration-300 z-50"
         >
           <FaChevronRight size={24} />
         </button>

@@ -68,7 +68,7 @@ const ImageSection = ({ title, beforeImage, afterImage }) => (
 const SliderIPD = () => {
     return (
         <div className="container mx-auto p-6 lg:p-12 bg-white rounded-lg shadow-md">
-            <h1 className="text-center text-3xl md:text-4xl font-extrabold mb-8 text-[#2E4168] font-sans">
+            <h1 className="text-center text-2xl md:text-4xl font-bold mb-8 text-[#2E4168] font-sans">
             Discharge Summary
             </h1>
             <p className="text-center mb-6 text-lg md:text-2xl text-gray-700 font-medium font-sans">

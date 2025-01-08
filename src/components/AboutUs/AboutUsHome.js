@@ -1,10 +1,11 @@
 import React from "react";
 import { FaHandsHelping, FaLaptopMedical, FaHeartbeat } from "react-icons/fa"; // Import icons
 import AboutUsImage from "../../img/AboutUs.pnj.png"; // Adjust the path if needed
+import Achievements from "./AchievMent";
 
 // Reusable Component for Section Title
 const SectionTitle = ({ title }) => (
-  <h2 className="text-3xl md:text-4xl font-extrabold text-center text- mb-8 text-[#2E4168]">
+  <h2 className="text-3xl md:text-5xl font-bold  text-center text- mb-8 text-[#2E4168]">
     {title}
   </h2>
 );
@@ -17,15 +18,15 @@ const AboutSection = ({ title, text, image }) => (
       <img
         src={AboutUsImage}
         alt={title}
-        className="rounded-lg shadow-lg w-full max-w-md md:max-w-full h-auto text-[#2E4168]"
+        className="w-full max-h-[300px] md:max-h-[350px] rounded-lg shadow-lg object-cover transition-transform duration-300"
       />
     </div>
 
     {/* Text Section */}
-    <div className="w-full md:w-1/2">
-      <div className="flex items-center space-x-3 mb-4">
-        <FaHandsHelping className="text-[#2E4168] text-3xl" />
-        <h3 className="text-2xl md:text-3xl font-bold text-[#2E4168]">{title}</h3>
+    <div className="w-full md:w-1/2 mt-0 md:-mt-20">
+      <div className="flex items-center space-x-3 mb-4 text-center ">
+        <FaHandsHelping className="text-[#2E4168] text-4xl" />
+        <h3 className="text-4xl md:text-3xl font-semibold ml-4 md:text-center text-[#2E4168]">{title}</h3>
       </div>
       <p className="text-[#2E4168]text-base md:text-lg leading-relaxed">{text}</p>
     </div>
@@ -59,9 +60,10 @@ const AboutUsHome = () => {
       />
 
       {/* Mission Section */}
-      <MissionSection
+      {/* <MissionSection
         mission="To revolutionize healthcare delivery by harnessing the power of technology, ensuring efficiency, accuracy, and a better patient experience for all."
-      />
+      /> */}
+      <Achievements></Achievements>
     </div>
   );
 };
