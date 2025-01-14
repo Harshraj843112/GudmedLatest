@@ -67,20 +67,20 @@ const Slider = () => {
     return () => window.removeEventListener("resize", updateScreenSize);
   }, []);
 
-  // Auto slide change every 4 seconds
-  // useEffect(() => {
-  //   const startAutoSlide = () => {
-  //     intervalRef.current = setInterval(() => {
-  //       if (!isClicked) {
-  //         carouselRef.current?.slideNext();
-  //       }
-  //     }, 2000); // Change slide every 4 seconds
-  //   };
 
-  //   startAutoSlide();
+  useEffect(() => {
+    const startAutoSlide = () => {
+      intervalRef.current = setInterval(() => {
+        if (!isClicked) {
+          carouselRef.current?.slideNext();
+        }
+      }, 5000); // Change slide every 4 seconds
+    };
 
-  //   return () => clearInterval(intervalRef.current); // Clear interval on component unmount
-  // }, [isClicked]);
+    startAutoSlide();
+
+    return () => clearInterval(intervalRef.current); // Clear interval on component unmount
+  }, [isClicked]);
 
   // Pause auto sliding when clicking
   const handleClick = () => {
