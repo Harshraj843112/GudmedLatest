@@ -5,7 +5,7 @@ import Achievements from "./AchievMent";
 
 // Reusable Component for Section Title
 const SectionTitle = ({ title }) => (
-  <h2 className="text-3xl md:text-5xl font-bold  text-center text- mb-80 text-[#2E4168]">
+  <h2 className="text-3xl md:text-5xl font-bold  text-center text- mb-16 text-[#2E4168]">
     {title}
   </h2>
 );
