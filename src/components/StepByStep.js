@@ -32,7 +32,7 @@ const StepByStep = () => {
       </div>
 
       {/* Steps Section */}
-      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:gap-32 gap-3 relative">
+      <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 md:gap-32 gap-3 relative">
         {/* Step 1 */}
         <div className="flex flex-col items-center text-center">
           <div className="bg-gradient-to-r from-[#2E4168] to-[#4A5C84] text-white md:p-8 p-10 rounded-2xl shadow-lg transform transition-transform duration-300 hover:scale-105">
@@ -44,10 +44,9 @@ const StepByStep = () => {
         </div>
 
         {/* Arrow between Step 1 and Step 2 */}
-        <div className="hidden lg:flex justify-center items-center absolute top-1/3 left-[28%] transform -translate-y-1/2 font-medium">
+        <div className="hidden sm:block lg:flex justify-center items-center absolute top-1/3 left-[40%] sm:left-[48%] md:left-[22%] lg:left-[28%] transform -translate-y-1/2 font-medium">
   <ArrowIcon size={24} scaleX={9} />
 </div>
-
 
         {/* Step 2 */}
         <div className="flex flex-col items-center text-center">
@@ -60,9 +59,10 @@ const StepByStep = () => {
         </div>
 
         {/* Arrow between Step 2 and Step 3 */}
-        <div className="hidden lg:flex  font-medium justify-center items-center absolute top-1/3 left-[64%] transform -translate-y-1/2">
-          <ArrowIcon size={24} scaleX={9}/>
-        </div>
+        <div className="hidden sm:block lg:flex font-medium justify-center items-center absolute top-1/3 left-[50%] sm:left-[48%] md:left-[62%] lg:left-[64%] transform -translate-y-1/2">
+  <ArrowIcon size={24} scaleX={9} />
+</div>
+
 
         {/* Step 3 */}
         <div className="flex flex-col items-center text-center">

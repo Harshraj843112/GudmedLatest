@@ -1,160 +1,3 @@
-// import React, { useState, useEffect } from "react";
-// import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-// import NavList from "./NavList";
-// import NavbarItem from "./NavbarItem";
-// import NavbarDropdown from "./NavbarDropdown";
-// import Logo from "../../img/Gudmed1.png";
-// import { Link } from "react-router-dom";
-
-// const Navbar = () => {
-//   const [activeDropdown, setActiveDropdown] = useState(null);
-//   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-//   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-//   useEffect(() => {
-//     const handleResize = () => {
-//       setIsMobile(window.innerWidth <= 768);
-//     };
-
-//     const debounceResize = () => {
-//       clearTimeout(window.resizeTimer);
-//       window.resizeTimer = setTimeout(handleResize, 300);
-//     };
-
-//     window.addEventListener("resize", debounceResize);
-//     return () => window.removeEventListener("resize", debounceResize);
-//   }, []);
-
-//   const handleMouseEnter = (list) => {
-//     if (!isMobile) setActiveDropdown(list);
-//   };
-
-//   const handleMouseLeave = () => {
-//     if (!isMobile) setActiveDropdown(null);
-//   };
-
-//   const handleDropdownToggle = (list, event) => {
-//     if (event) event.stopPropagation(); // Prevent event propagation
-//     setActiveDropdown((prev) => (prev === list ? null : list));
-//   };
-
-//   const toggleMobileMenu = () => {
-//     setMobileMenuOpen(!mobileMenuOpen);
-//   };
-
-//   const closeMobileMenu = () => {
-//     setMobileMenuOpen(false);
-//     setActiveDropdown(null);
-//   };
-
-//   return (
-//     <div className="p-4 bg-gray-100">
-//       <div className="bg-white shadow-md rounded-lg px-4 py-4 sm:py-6 md:py-6 lg:px-12 flex items-center justify-between flex-wrap">
-//         {/* Logo */}
-//         <div className="flex items-center flex-shrink-0">
-//           <Link to="/" onClick={closeMobileMenu}>
-//             <img
-//               src={Logo || "https://via.placeholder.com/150"} // Fallback image for debugging
-//               alt="logo"
-//               className="h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 w-auto md:mx-2 lg:mx-4"
-//             />
-//           </Link>
-//         </div>
-
-//         {/* Mobile Menu Toggle */}
-//         <div className="md:hidden sm:hidden flex items-center justify-end">
-//           <button className="text-3xl" onClick={toggleMobileMenu}>
-//             {mobileMenuOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
-//           </button>
-//         </div>
-
-//         {/* Desktop Navigation */}
-//         <div className="hidden md:flex flex-1 justify-center ml-52">
-//           <ul className="flex gap-4 lg:gap-4 -ml-80 items-center font-medium text-sm lg:text-base xl:text-lg">
-//             {NavList.map((item) => (
-//               <li
-//                 key={item.id}
-//                 className="relative"
-//                 onMouseEnter={() => handleMouseEnter(item.list)}
-//                 onMouseLeave={handleMouseLeave}
-//                 onClick={(e) => handleDropdownToggle(item.list, e)}
-//               >
-//                 <NavbarItem
-//                   list={item.list}
-//                   link={item.link}
-//                   isActive={activeDropdown === item.list}
-//                 />
-//                 {item.dropdown && activeDropdown === item.list && (
-//                   <div className="absolute top-full left-0 z-20 bg-white shadow-lg rounded-md p-2">
-//                     <NavbarDropdown
-//                       key={item.id}
-//                       dropdown={item.dropdown}
-//                       isMobile={isMobile}
-//                       closeMenu={closeMobileMenu} // Pass close function
-//                     />
-//                   </div>
-//                 )}
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-
-//         {/* Get in Touch Button */}
-//         <div className="hidden sm:hidden md:flex items-center justify-end flex-shrink-0">
-//           <Link to="/contacts" onClick={closeMobileMenu}>
-//             <button className="px-4 py-2 sm:px-5 sm:py-3 md:px-6 md:py-3 xl:px-8 xl:py-4 text-sm sm:text-base md:text-lg xl:text-xl font-semibold rounded-full border border-[#2E4168] text-black transition hover:bg-[#2E4168] hover:text-white md:mx-2 lg:mx-4">
-//               Contacts
-//             </button>
-//           </Link>
-//         </div>
-//       </div>
-
-//       {/* Mobile Navigation */}
-//       {mobileMenuOpen && (
-//         <div className="md:hidden mt-4 bg-white rounded-lg shadow-lg p-4">
-//           <ul className="flex flex-col gap-4 text-sm sm:text-base">
-//             {NavList.map((item) => (
-//               <li
-//                 key={item.id}
-//                 className="relative"
-//                 onClick={(e) => handleDropdownToggle(item.list, e)}
-//               >
-//                 <Link
-//                   to={item.link}
-//                   className="block"
-//                   onClick={closeMobileMenu}
-//                 >
-//                   <NavbarItem
-//                     list={item.list}
-//                     link={item.link}
-//                     isActive={activeDropdown === item.list}
-//                   />
-//                 </Link>
-//                 {item.dropdown && activeDropdown === item.list && (
-//                   <div className="mt-4 mb-32">
-//                     <NavbarDropdown
-//                       key={item.id}
-//                       dropdown={item.dropdown}
-//                       isMobile={isMobile}
-//                       closeMenu={closeMobileMenu} // Pass close function
-//                     />
-//                   </div>
-//                 )}
-//               </li>
-//             ))}
-//           </ul>
-//           <Link to="/contacts" onClick={closeMobileMenu}>
-//             <button className="mt-6 w-full px-4 py-3 text-sm sm:text-base font-semibold rounded-full border border-[#2E4168] text-black transition hover:bg-[#2E4168] hover:text-white">
-//               Get in touch
-//             </button>
-//           </Link>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default Navbar;
 import React, { useState, useEffect } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import NavList from "./NavList";
@@ -166,11 +9,15 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 700); // For mobile (phones)
+  const [isLaptop, setIsLaptop] = useState(window.innerWidth <= 1200 && window.innerWidth > 700); // For laptop (tablets and small laptops)
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1200); // For desktop
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1024);
+      setIsMobile(window.innerWidth <= 700);
+      setIsLaptop(window.innerWidth <= 1200 && window.innerWidth > 700);
+      setIsDesktop(window.innerWidth > 1200);
     };
 
     window.addEventListener("resize", handleResize);
@@ -178,11 +25,11 @@ const Navbar = () => {
   }, []);
 
   const handleMouseEnter = (list) => {
-    if (!isMobile) setActiveDropdown(list);
+    if (!isMobile) setActiveDropdown(list); // Only handle hover for non-mobile devices
   };
 
   const handleMouseLeave = () => {
-    if (!isMobile) setActiveDropdown(null);
+    if (!isMobile) setActiveDropdown(null); // Only handle hover for non-mobile devices
   };
 
   const handleDropdownToggle = (list, event) => {
@@ -214,55 +61,60 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="lg:hidden flex items-center">
-          <button className="text-3xl" onClick={toggleMobileMenu}>
-            {mobileMenuOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
-          </button>
-        </div>
+        <div className="xl:hidden  block items-center">
+  <button className="text-3xl" onClick={toggleMobileMenu}>
+    {mobileMenuOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
+  </button>
+</div>
+
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex flex-1 justify-center">
-          <ul className="flex gap-6 items-center font-medium text-base">
-            {NavList.map((item) => (
-              <li
-                key={item.id}
-                className="relative"
-                onMouseEnter={() => handleMouseEnter(item.list)}
-                onMouseLeave={handleMouseLeave}
-              >
-                <NavbarItem
-                  list={item.list}
-                  link={item.link}
-                  isActive={activeDropdown === item.list}
-                />
-                {item.dropdown && activeDropdown === item.list && (
-                  <div className="absolute top-full left-0 z-20 bg-white shadow-lg rounded-md p-2">
-                    <NavbarDropdown
-                      key={item.id}
-                      dropdown={item.dropdown}
-                      isMobile={isMobile}
-                      closeMenu={closeMobileMenu}
-                    />
-                  </div>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
+        {isDesktop && (
+          <div className="hidden lg:flex flex-1 justify-center">
+            <ul className="flex gap-6 items-center font-medium text-base">
+              {NavList.map((item) => (
+                <li
+                  key={item.id}
+                  className="relative"
+                  onMouseEnter={() => handleMouseEnter(item.list)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <NavbarItem
+                    list={item.list}
+                    link={item.link}
+                    isActive={activeDropdown === item.list}
+                  />
+                  {item.dropdown && activeDropdown === item.list && (
+                    <div className="absolute top-full left-0 z-20 bg-white shadow-lg rounded-md p-2">
+                      <NavbarDropdown
+                        key={item.id}
+                        dropdown={item.dropdown}
+                        isMobile={isMobile}
+                        closeMenu={closeMobileMenu}
+                      />
+                    </div>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
-        {/* Contact Button */}
-        <div className="hidden lg:flex items-center">
-          <Link to="/contacts" onClick={closeMobileMenu}>
-            <button className="px-6 py-3 text-lg font-semibold rounded-full   border border-[#2E4168] text-black transition hover:bg-[#2E4168] hover:text-white">
-              Get in Touch
-            </button>
-          </Link>
-        </div>
+        {/* Contact Button (Visible in Desktop) */}
+        {isDesktop && (
+          <div className="hidden lg:flex items-center">
+            <Link to="/contacts" onClick={closeMobileMenu}>
+              <button className="px-6 py-3 text-lg font-semibold rounded-full border border-[#2E4168] text-black transition hover:bg-[#2E4168] hover:text-white">
+                Get in Touch
+              </button>
+            </Link>
+          </div>
+        )}
       </div>
 
-      {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden mt-4 bg-white rounded-lg shadow-lg p-4">
+      {/* Mobile Navigation (Visible only in Mobile/Tablet) */}
+      {mobileMenuOpen && (isMobile || isLaptop) && (
+        <div className="xl:hidden mt-4 bg-white rounded-lg shadow-lg p-4">
           <ul className="flex flex-col gap-4">
             {NavList.map((item) => (
               <li
@@ -278,7 +130,7 @@ const Navbar = () => {
                   />
                 </Link>
                 {item.dropdown && activeDropdown === item.list && (
-                  <div className="mt-3 mb-32 ">
+                  <div className="mt-2 mb-32 md:mb-0">
                     <NavbarDropdown
                       key={item.id}
                       dropdown={item.dropdown}
@@ -291,7 +143,7 @@ const Navbar = () => {
             ))}
           </ul>
           <Link to="/contacts" onClick={closeMobileMenu}>
-            <button className="mt-6 w-full px-6 py-3 text-lg font-semibold rounded-full  border border-[#2E4168] text-black transition hover:bg-[#2E4168] hover:text-white">
+            <button className="mt-6 w-full px-6 py-3 text-lg font-semibold rounded-full border border-[#2E4168] text-black transition hover:bg-[#2E4168] hover:text-white">
               Get in Touch
             </button>
           </Link>

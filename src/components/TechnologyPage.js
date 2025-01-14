@@ -73,7 +73,7 @@ const TechnologyPage = () => (
     </div>
 
     <section className="mb-10">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4  gap-8">
         {cardsData.map((card, index) => (
           <HighlightCard key={index} {...card} />
         ))}
@@ -82,7 +82,7 @@ const TechnologyPage = () => (
 
     <section className="py-16 bg-white">
       <div className="container mx-auto px-2 lg:px-0">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-12 lg:gap-16">
           {motionCardsData.map((card, index) => (
             <MotionCard key={index} {...card} />
           ))}
@@ -97,10 +97,10 @@ const TechnologyPage = () => (
   </h2>
 </div>
 
-      <p className="text-gray-700 max-w-5xl mx-auto text-lg mb-10 ">
+      <p className="text-gray-700 max-w-5xl mx-auto text-lg mb-10 md:mx-4 xl:mx-auto ">
         Artificial intelligence is transforming healthcare, and GudMed is at the forefront of this revolution. Our AI-driven platform helps hospitals and doctors make data-backed decisions faster. From predicting patient outcomes to optimizing workflows, our AI tools improve efficiency, reduce errors, and offer a personalized healthcare experience for every patient.
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4  gap-8">
         <HighlightCard
           icon={FaRobot}
           title="Predictive Analytics"

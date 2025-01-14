@@ -72,7 +72,7 @@ const KnowledgePartnerCardSection = () => {
             />
           </div>
 
-          <div className="grid grid-cols-3 text-2xl md:text-6xl  gap-6 justify-center lg:justify-end md:m-8 ml-0 md:ml-20  ">
+          <div className="grid grid-cols-3 text-2xl md:text-6xl  gap-6 justify-center lg:justify-end md:m-0 ml-0 md:ml-0 lg:ml-20 ">
             {cards.map((card, index) => (
               <div
                 key={index}

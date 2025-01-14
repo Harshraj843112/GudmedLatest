@@ -5,7 +5,7 @@ import Achievements from "./AchievMent";
 
 // Reusable Component for Section Title
 const SectionTitle = ({ title }) => (
-  <h2 className="text-3xl md:text-5xl font-bold  text-center text- mb-8 text-[#2E4168]">
+  <h2 className="text-3xl md:text-5xl font-bold  text-center text- mb-80 text-[#2E4168]">
     {title}
   </h2>
 );
@@ -59,10 +59,7 @@ const AboutUsHome = () => {
         className=""
       />
 
-      {/* Mission Section */}
-      {/* <MissionSection
-        mission="To revolutionize healthcare delivery by harnessing the power of technology, ensuring efficiency, accuracy, and a better patient experience for all."
-      /> */}
+      
       <Achievements></Achievements>
     </div>
   );

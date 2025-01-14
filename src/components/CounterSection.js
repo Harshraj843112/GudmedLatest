@@ -86,7 +86,7 @@ const CounterSection = () => {
       {/* Background Color Layer */}
       <div className="absolute inset-0 bg-[#2E4168] opacity-80"></div>
       {/* Content Layer */}
-      <div className="relative z-10 container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center text-white">
+      <div className="relative z-10 container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 text-center text-white">
         {[
           {
             icon: <img src={PrescriptionImage} alt="Prescription Icon" className="w-10 h-10" />,
