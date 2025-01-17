@@ -15,7 +15,7 @@ const HospitalFeatureCard = ({ imageSrc, title, description, features }) => {
                 </div>
 
                 {/* Text Content Frame */}
-                <div className="w-full lg:w-1/2 p-8 lg:p-10 flex flex-col justify-start bg-gray-50 -mt-10 ">
+                <div className="w-full lg:w-1/2 p-8 sm:p-5 md:p-4 lg:p-10 flex flex-col justify-start bg-gray-50 -mt-10 ">
                     <h3 className="md:text-4xl text-[1.4rem]  font-semibold text-[#2E4168] mb-4 mt-0">{title}</h3>
                     <p className="text-gray-700 mb-6">{description}</p>
                     <h4 className="text-lg font-semibold text-[#2E4168] mb-3">Key Features:</h4>

@@ -32,7 +32,7 @@ const Patient = () => {
         <div className="w-full md:w-1/2 text-center md:text-right space-y-6 mx- md:mx-0 text-current ">
   {/* Title for Desktop View */}
   <div className="hidden md:block">
-  <h2 className="text-4xl lg:text-5xl font-medium text-[#2E4168] text-center mb-3 ml-10 -mr-20 -mt-20 ">
+  <h2 className="text-4xl  lg:text-5xl font-medium text-[#2E4168] text-center mb-3 ml-10 -mr-20 -mt-20 ">
     Healthcare can be  complex
   </h2>
   <span className="block text-[#2E4168] text-4xl lg:text-5xl font-medium mb-3">
@@ -46,14 +46,29 @@ const Patient = () => {
   </span>
 </div>
 
+{/* tablet view view */}
+<div className="block md:hidden space-y-80 -mt-40">
+    <h2 className="text-4xl md:text-5xl font-medium text-[#2E4168] text-center gap-y-10 ">
+      Healthcare can be
+    </h2>
+    <span className="text-[#2E4168] -mt-80 text-3xl sm:text-4xl font-medium  ">
+      complex but GudMed&nbsp;
+    </span>
+    <span className="text-[#2E4168] mt-6 text-3xl sm:text-4xl font-medium">
+      is here&nbsp;
+    </span>
+    <span className="text-[#2E4168] mt-3 text-3xl sm:text-4xl font-medium">
+      to simplify it for you.
+    </span>
+  </div>
 
 
   {/* Title for Mobile View */}
   <div className="block md:hidden space-y-80 -mt-40">
-    <h2 className="text-3xl sm:text-4xl font-medium text-[#2E4168] text-center gap-y-10 ">
+    <h2 className="text-3xl md:mx-auto sm:text-4xl font-medium text-[#2E4168] text-center gap-y-10 ">
       Healthcare can be
     </h2>
-    <span className="text-[#2E4168] -mt-80 text-3xl sm:text-4xl font-medium  ">
+    <span className="text-[#2E4168] md:mx-auto -mt-80 text-3xl sm:text-4xl font-medium  ">
       complex but GudMed&nbsp;
     </span>
     <span className="text-[#2E4168] mt-6 text-3xl sm:text-4xl font-medium">

@@ -101,7 +101,7 @@ import { MdHealthAndSafety, MdOutlineScience } from 'react-icons/md'
   
   export default function Achievements() {
     return (
-      <div className="min-h-screen bg-white py-8 px-0 sm:px-6 lg:px-12">
+      <div className="min-h-screen bg-white py-20 px-0 sm:px-6 lg:px-0">
         <div className="max-w-7xl md:text-4xl text-3xl  mx-auto">
           <motion.h1 
             className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center text-[#2E4168] mb-8"
@@ -117,7 +117,7 @@ import { MdHealthAndSafety, MdOutlineScience } from 'react-icons/md'
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <p className="text-base sm:text-lg text-center text-[#2E4168] mb-8 md:mx-16">
+            <p className="text-base sm:text-lg text-center text-[#2E4168] mb-8 md:mx-4 lg:mx-16 ">
               At GudMed, we are revolutionizing healthcare through technology, innovation, and patient-centered solutions. Here are some milestones that reflect our commitment to excellence:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">

@@ -10,7 +10,7 @@ const DoctorHome = () => {
   return (
     <div className="relative bg-gray-50 py-12 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-40">
       {/* Header */}
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#2E4168] mb-8 text-center">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl xl:  font-medium text-[#2E4168] mb-8 text-center">
         For Doctors
       </h1>
 
@@ -27,9 +27,9 @@ const DoctorHome = () => {
 
         {/* Content Section */}
         <div className="w-full md:w-1/2 text-center md:text-left space-y-6 ">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#2E4168] text-center gap-80">
+          <h2 className="text-3xl sm:text-4xl md:text-[2.1rem] lg:text-[2.4rem] xl:text-5xl  font-medium text-[#2E4168] text-center  ">
             Your Clinic <br />
-            <span className="text-[#2E4168] mt-5">Digitized In Your Way</span>
+            <span className="text-[#2E4168] mt-10">Digitized In Your Way</span>
           </h2>
           <div className="flex flex-row gap-4 justify-center md:justify-center sm:pl-4 ">
   <a

@@ -40,7 +40,7 @@ const GudmedICUAutomation = () => {
     return (
         <div className="bg-white  ">
             <div className="max-w-7xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden">
-                <h2 className="text-3xl sm:text-4xl lg:text-4xl font-semibold text-[#2E4168] mb-6 text-center pt-8 px-4">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-4xl font-semibold text-[#2E4168] mb-6 text-center pt-8 px-4">
                     Revolutionizing ICU Automation with Gudmed
                 </h2>
                 <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed mb-10 text-center px-0 sm:px-20">

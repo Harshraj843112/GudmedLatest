@@ -4,16 +4,13 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import "animate.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-// Video Import
-import NewVideo from "../img/rome.mp4";
-
 // Slide Data
 const slides = [
   {
     titleDesktop:
       "Revolutionize patient care with <br> cutting-edge Artificial Intelligence <br> tailored for hospitals and<br> healthcare providers.",
     titleMobile:
-      "Revolutionize patient <br/> care with cutting-edge <br> Artificial Intelligence tailored for hospitals <br/> and healthcare providers.",
+      "Revolutionize patient <br/> care with cutting-edge <br> Artificial Intelligence tailored for hospitals and <br/>  healthcare providers.",
     gradientWords: ["Artificial Intelligence", "hospitals"],
     gradient: "bg-gradient-to-r from-purple-400 via-pink-500 to-red-500",
   },
@@ -67,14 +64,13 @@ const Slider = () => {
     return () => window.removeEventListener("resize", updateScreenSize);
   }, []);
 
-
   useEffect(() => {
     const startAutoSlide = () => {
       intervalRef.current = setInterval(() => {
         if (!isClicked) {
           carouselRef.current?.slideNext();
         }
-      }, 5000); // Change slide every 4 seconds
+      }, 5000); // Change slide every 5 seconds
     };
 
     startAutoSlide();
@@ -94,7 +90,7 @@ const Slider = () => {
       if (!isClicked) {
         carouselRef.current?.slideNext();
       }
-    }, ); // Restart auto sliding
+    }, 5000); // Restart auto sliding
   };
 
   const handleNext = () => carouselRef.current?.slideNext();
@@ -112,8 +108,6 @@ const Slider = () => {
       1024: { items: 1 },
     },
   };
-
-  const currentSlide = slides[currentSlideIndex];
 
   const renderTitle = (title, gradientWords, gradientClass) => {
     const words = title.split(" ");
@@ -155,7 +149,6 @@ const Slider = () => {
 
   return (
     <div className="flex flex-col items-center justify-center bg-white">
-      {/* Text Carousel Section */}
       <div
         className="relative w-full px-6 sm:px-12 lg:px-24 py-4 sm:py-8 flex flex-col items-center sm:mt-6"
         onClick={handleClick}
@@ -168,15 +161,13 @@ const Slider = () => {
             activeIndex={currentSlideIndex}
             items={slides.map((slide, index) => (
               <div key={index} className="text-container animate__animated animate__slideInRight animate__faster">
-                {/* Title Rendering */}
                 <h1
-                  className={`text-gray-800 text-center font-bold leading-tight ${
-                    slide.titleDesktop.length > 100
-                      ? "text-[1.5rem]   sm:text-3xl lg:text-7xl"
-                      : slide.titleDesktop.length > 60
-                      ? " mt-10 md:mt-0 text-[1.6rem] sm:text-4xl lg:text-7xl"
-                      : "text-5xl sm:text-5xl lg:text-8xl"
-                  }`}
+                  className={`text-gray-800 text-center font-bold leading-tight ${slide.titleDesktop.length > 100
+                    ? "text-[1.5rem] sm:text-3xl lg:text-[4.6rem] md:text-2rem"
+                    : slide.titleDesktop.length > 60
+                    ? "mt-10 md:mt-0 text-[1.6rem] sm:text-4xl lg:text-7xl"
+                    : "text-5xl sm:text-5xl lg:text-8xl"
+                    } ipad-pro:text-[3rem] fold:text-[2rem] ipad-pro:leading-snug fold:leading-snug`}
                 >
                   {renderFormattedTitle(
                     isMobile ? slide.titleMobile : slide.titleDesktop,
@@ -184,9 +175,8 @@ const Slider = () => {
                     slide.gradient
                   )}
                 </h1>
-                {/* Benefits Section */}
                 {slide.benefits && (
-                  <ul className="mt-6 space-y-3 mx-auto  sm:px-12">
+                  <ul className="mt-6 space-y-3 mx-auto sm:px-12">
                     {slide.benefits.map((benefit, i) => (
                       <li
                         key={i}
@@ -204,7 +194,6 @@ const Slider = () => {
             ))}
           />
         </div>
-        {/* Navigation Buttons */}
         <button
           onClick={handlePrev}
           className="absolute left-4 sm:left-8 top-[15rem] md:top-1/2 transform -translate-y-1/2 bg-[#2E4168] w-12 h-12 sm:w-14 sm:h-14 rounded-full text-white hover:bg-customDark shadow-lg flex items-center justify-center transition-all duration-300 z-50"
@@ -217,16 +206,6 @@ const Slider = () => {
         >
           <FaChevronRight size={24} />
         </button>
-      </div>
-
-      {/* Static Video Section */}
-      <div className="w-full flex justify-center mt-0 px-4 sm:mb-80 md:mb-12 lg:mb-16">
-        <div className="w-full h-80 sm:h-64 md:h-80 lg:h-[800px] rounded-lg shadow-md overflow-hidden">
-          <video className="w-full h-full object-cover" autoPlay muted loop playsInline>
-            <source src={NewVideo} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
       </div>
     </div>
   );

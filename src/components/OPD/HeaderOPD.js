@@ -2,7 +2,7 @@ import React from 'react';
 
 const HeaderOPD = () => (
     <section className="bg-white  p-2 rounded-lg shadow-md mb-8 animate-fadeIn">
-        <h1 className="text-3xl font-semibold text-center text-[#2E4168] mb-4">
+        <h1 className="text-3xl md:text-4xl  font-semibold text-center text-[#2E4168] mb-4">
         OPD Prescription Digitization: How GudMed Works
         </h1>
         <p className="text-center text-gray-800">
