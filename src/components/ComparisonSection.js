@@ -122,7 +122,7 @@ const ComparisonSection = () => {
   </span>
   <span className="text-3xl sm:text-4xl lg:text-7xl text-[#2E4168]">vs</span>
   <span className="text-3xl sm:text-4xl lg:text-7xl text-[#2E4168]">
-    Other
+    Others
   </span>
 </h1>
 
@@ -135,7 +135,7 @@ const ComparisonSection = () => {
               <tr>
                 <th className="border border-[#414c61] px-2 sm:px-4 py-2 sm:py-3 text-left font-bold">Aspect</th>
                 <th className="border border-[#414c61] px-2 sm:px-4 py-2 sm:py-3 text-left font-medium">Other Technology</th>
-                <th className="border border-[#414c61] px-2 sm:px-4 py-2 sm:py-3 text-left font-bold text-3xl mx-auto ">GudMed Technology</th>
+                <th className="border border-[#414c61] px-2 sm:px-4 py-2 sm:py-3 text-left font-bold text-3xl mx-auto ">GudMed Technologies</th>
               </tr>
             </thead>
             <tbody>

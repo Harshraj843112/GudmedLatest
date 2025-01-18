@@ -14,6 +14,19 @@ const StepByStep = () => {
     </svg>
   );
 
+  const DownArrowIcon = ({ size }) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className={`h-${size} w-${size} text-[#2E4168]`}
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7 13l5 5m0 0l5-5m-5 5V6" />
+    </svg>
+  );
+
   return (
     <div className="px-4 sm:px-8 lg:px-16">
       {/* Header Section */}
@@ -41,12 +54,16 @@ const StepByStep = () => {
           <p className="text-sm sm:text-base lg:text-lg text-gray-700 mt-4">
             Doctors continue to do what they do best—writing prescriptions with pen and paper.
           </p>
+          {/* Downward Arrow for Mobile */}
+          <div className="sm:hidden mt-6">
+            <DownArrowIcon size={12} />
+          </div>
         </div>
 
         {/* Arrow between Step 1 and Step 2 */}
         <div className="hidden sm:block lg:flex justify-center items-center absolute top-1/3 left-[40%] sm:left-[48%] md:left-[22%] lg:left-[28%] transform -translate-y-1/2 font-medium">
-  <ArrowIcon size={24} scaleX={9} />
-</div>
+          <ArrowIcon size={32} />
+        </div>
 
         {/* Step 2 */}
         <div className="flex flex-col items-center text-center">
@@ -56,13 +73,16 @@ const StepByStep = () => {
           <p className="text-sm sm:text-base lg:text-lg text-gray-700 mt-4">
             Simply scan the handwritten prescription using the GudMed Smart Camera.
           </p>
+          {/* Downward Arrow for Mobile */}
+          <div className="sm:hidden mt-6">
+            <DownArrowIcon size={12} />
+          </div>
         </div>
 
         {/* Arrow between Step 2 and Step 3 */}
         <div className="hidden sm:block lg:flex font-medium justify-center items-center absolute top-1/3 left-[50%] sm:left-[48%] md:left-[62%] lg:left-[64%] transform -translate-y-1/2">
-  <ArrowIcon size={24} scaleX={9} />
-</div>
-
+          <ArrowIcon size={32} />
+        </div>
 
         {/* Step 3 */}
         <div className="flex flex-col items-center text-center">
@@ -79,4 +99,3 @@ const StepByStep = () => {
 };
 
 export default StepByStep;
-//26 , 66

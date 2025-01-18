@@ -1,7 +1,7 @@
 import React from 'react';
 
 const StepByStep = () => {
-  const ArrowIcon = ({ size }) => (
+  const ArrowIconHorizontal = ({ size }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className={`h-${size} w-${size} text-[#2E4168]`}
@@ -11,6 +11,19 @@ const StepByStep = () => {
       strokeWidth={2}
     >
       <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+    </svg>
+  );
+
+  const ArrowIconVertical = ({ size }) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className={`h-${size} w-${size} text-[#2E4168]`}
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7 11l5 5m0 0l5-5m-5 5V6" />
     </svg>
   );
 
@@ -29,8 +42,11 @@ const StepByStep = () => {
           </div>
 
           {/* Arrow between Step 1 and Step 2 */}
+          <div className="lg:hidden flex justify-center items-center mt-4">
+            <ArrowIconVertical size={16} />
+          </div>
           <div className="hidden lg:flex justify-center items-center absolute top-1/3 left-[28%] transform -translate-y-1/2 font-medium">
-            <ArrowIcon size={24} />
+            <ArrowIconHorizontal size={16} />
           </div>
 
           {/* Step 2 */}
@@ -44,8 +60,11 @@ const StepByStep = () => {
           </div>
 
           {/* Arrow between Step 2 and Step 3 */}
+          <div className="lg:hidden flex justify-center items-center mt-4">
+            <ArrowIconVertical size={24} />
+          </div>
           <div className="hidden lg:flex font-medium justify-center items-center absolute top-1/3 left-[64%] transform -translate-y-1/2">
-            <ArrowIcon size={24} />
+            <ArrowIconHorizontal size={24} />
           </div>
 
           {/* Step 3 */}
