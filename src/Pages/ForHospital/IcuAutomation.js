@@ -2,8 +2,8 @@ import React from "react";
 import { FaHeartbeat, FaChartLine, FaTools, FaIndustry } from "react-icons/fa";
 import MonitoringImage from "../../img/SmartPatientMonitroing.jpg";
 import OutcomesImage from "../../img/EnhancedPatientoutcomes.jpg";
-import WorkflowImage from "../../img/mission-img.jpg";
-import MarketImage from "../../img/pf2.jpg";
+import WorkflowImage from "../../img/GudmedMission.png.jpg";
+import MarketImage from "../../img/HospitalMarketing.png.jpg";
 
 const GudmedICUAutomation = () => {
     const features = [

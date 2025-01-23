@@ -64,24 +64,25 @@ const WhyGudmedUnique = () => {
   ];
 
   return (
-    <section className="bg-white py-16 px-6 lg:px-20">
+    <section className="bg-white py-10 px-6 lg:px-20">
       <div className="container mx-auto">
         <motion.h2
-          className="text-[1.8rem] lg:text-5xl font-bold text-[#2E4168] text-center mb-8"
+          className="text-[1.8rem] lg:text-4xl font-bold text-[#2E4168] text-center mb-8"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           Why GudMed is Unique  ?
         </motion.h2>
-        <motion.p
-          className="text-xl font-medium text-gray-800 text-center mb-12 mx-auto"
+        <motion.pmd
+         className="block text-xl md:max-w-3xl font-medium text-gray-800 text-center mb-12 mx-auto"
+
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
           GudMed is revolutionizing healthcare with innovative, patient-focused solutions designed to meet the unique needs of hospitals, doctors, and patients.
-        </motion.p>
+        </motion.pmd>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {sections.map((section, index) => (
             <motion.div

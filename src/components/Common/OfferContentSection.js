@@ -23,7 +23,7 @@ const OfferContentSection = ({
     <div className="text-center mb-12">
       {/* Conditionally render title based on screen size */}
       <h1
-        className={`font-bold leading-tight ${isDesktop ? 'text-4xl' : 'text-2xl'}`} // Conditional text size
+        className={`font-bold leading-tight ${isDesktop ? 'text-3xl' : 'text-[1.6rem]'}`} // Conditional text size
         dangerouslySetInnerHTML={{
           __html: isDesktop ? titleDesktop : titleMobile // Conditional content
         }}

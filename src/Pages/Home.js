@@ -24,7 +24,7 @@ const Home = () => {
     
       <Slider />
      
-      <HeroSection></HeroSection>
+    
       <AnimatedText></AnimatedText>
       <StepByStep></StepByStep>
       <ImageComparison></ImageComparison>

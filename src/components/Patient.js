@@ -32,13 +32,13 @@ const Patient = () => {
         <div className="w-full md:w-1/2 text-center md:text-right space-y-6 mx- md:mx-0 text-current ">
   {/* Title for Desktop View */}
   <div className="hidden md:block">
-  <h2 className="text-4xl  lg:text-5xl font-medium text-[#2E4168] text-center mb-3 ml-10 -mr-20 -mt-20 ">
+  <h2 className="text-4xl md:-ml-20 md:text-3xl md:-mt-4 lg:-mt-20 lg:ml-0  lg:text-5xl font-medium text-[#2E4168] text-center mb-3 ml-10 -mr-20 -mt-20 ">
     Healthcare can be  complex
   </h2>
-  <span className="block text-[#2E4168] text-4xl lg:text-5xl font-medium mb-3">
+  <span className="block text-[#2E4168] md:text-3xl text-4xl lg:text-5xl font-medium mb-3">
    but GudMed  is here to &nbsp;
   </span>
-  <span className="block text-[#2E4168] text-4xl lg:text-5xl font-medium mb-3">
+  <span className="block md:text-4xl  text-[#2E4168] text-4xl lg:text-5xl font-medium mb-3">
     simplify  it for you.&nbsp;
   </span>
   <span className="block text-[#2E4168] text-4xl lg:text-5xl font-medium">

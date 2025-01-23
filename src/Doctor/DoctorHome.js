@@ -26,7 +26,7 @@ const DoctorHome = () => {
         </div>
 
         {/* Content Section */}
-        <div className="w-full md:w-1/2 text-center md:text-left space-y-6 ">
+        <div className="w-full md:w-1/2 text-center md:text-left space-y-6    ">
           <h2 className="text-3xl sm:text-4xl md:text-[2.1rem] lg:text-[2.4rem] xl:text-5xl  font-medium text-[#2E4168] text-center  ">
             Your Clinic <br />
             <span className="text-[#2E4168] mt-10">Digitized In Your Way</span>

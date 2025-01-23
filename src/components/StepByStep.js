@@ -30,8 +30,8 @@ const StepByStep = () => {
   return (
     <div className="px-4 sm:px-8 lg:px-16">
       {/* Header Section */}
-      <div className="mt-12 text-center">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#2E4168] mb-6">
+      <div className="-mt-20 md:-mt-16 text-center">
+        <h2 className="text-3xl sm:text-4xl lg:text-4xl font-semibold text-[#2E4168] mb-6">
           🔧 HOW WE WORKS?
         </h2>
         <h3 className="text-lg sm:text-xl lg:text-3xl text-[#2E4168] font-medium max-w-2xl mx-auto text-center -mt-4 md:mt-0">

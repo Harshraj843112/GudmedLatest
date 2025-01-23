@@ -63,14 +63,15 @@ const MotionCard = ({ icon: Icon, title, description, bgColor }) => (
 
 const TechnologyPage = () => (
   <div className="bg-white min-h-screen py-12 px-6 ">
-    <div className="text-center mb-10 -mt-16 -md:mt-20 ">
-      <h1 className="text-4xl md:text-6xl lg:text-6xl font-bold font-sans text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500 mb-1 md:mb-7 lg:mb-8 p-10 text-center">
-        GudMed’s Technology
-      </h1>
-      <p className="text-gray-700 max-w-3xl mx-auto text-lg -mt-5 -md:mt-40 -lg:mt-40 ">
-        GudMed’s technology is designed to optimize healthcare operations through automation and intelligent tools. Our platform integrates seamlessly with hospital systems, enabling real-time access to patient data, reports, and medication history.
-      </p>
-    </div>
+    <div className="text-center mb-6 -mt-12 md:-mt-6">
+  <h1 className="text-4xl font-bold font-sans text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500 mb-4 p-6">
+    GudMed’s Technology
+  </h1>
+  <p className="text-gray-700 max-w-3xl mx-auto text-lg mt-0 md:-mt-4">
+    GudMed’s technology is designed to optimize healthcare operations through automation and intelligent tools. Our platform integrates seamlessly with hospital systems, enabling real-time access to patient data, reports, and medication history.
+  </p>
+</div>
+
 
     <section className="mb-10">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4  gap-8">
