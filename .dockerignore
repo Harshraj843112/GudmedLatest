@@ -1,16 +1,11 @@
-# Node.js dependencies
-node_modules/
-
-# Build output
-/build
-
+# Dependencies
+node_modules
 # Logs
 *.log
 npm-debug.log*
-
+*.lock
 # Environment variables
 .env
-
 # IDE files
 .vscode/
 .idea/

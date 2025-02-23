@@ -21,9 +21,11 @@ import NewFooter from './components/NewFooter';
 import Patient from './components/Patient';
 
 const App = () => {
+  
   return (
     <div>
       <Navbar></Navbar>
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/hospital" element={<ForHospital />} />
