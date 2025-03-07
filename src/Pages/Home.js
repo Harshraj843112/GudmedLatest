@@ -32,9 +32,11 @@ const Home = () => {
      
      
       <CounterSection></CounterSection>
+
       <TechnologyPage></TechnologyPage>
-      <FeaturesSection></FeaturesSection>
-      <FeaturesSection></FeaturesSection>
+      {/* <FeaturesSection></FeaturesSection>
+
+      <FeaturesSection></FeaturesSection> */}
       
       <ComparisonSection></ComparisonSection>
       <WhyGudmedUnique></WhyGudmedUnique>

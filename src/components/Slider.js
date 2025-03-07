@@ -1,87 +1,61 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "animate.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-
-// Slide Data
-const slides = [
-  {
-    titleDesktop:
-      "Revolutionize patient care with <br> cutting-edge Artificial Intelligence <br> tailored for hospitals and<br> healthcare providers.",
-    titleMobile:
-      "Revolutionize patient <br/> care with cutting-edge <br> Artificial Intelligence tailored for hospitals and <br/>  healthcare providers.",
-    gradientWords: ["Artificial Intelligence", "hospitals"],
-    gradient: "bg-gradient-to-r from-purple-400 via-pink-500 to-red-500",
-  },
-  {
-    titleDesktop: "Harness the <br> Power of <br> GudMed AI",
-    titleMobile: "Harness the <br/> Power of <br> GudMed AI",
-    gradientWords: ["GudMed AI", "Power"],
-    gradient: "bg-gradient-to-r from-purple-400 via-pink-500 to-red-500",
-  },
-  {
-    titleDesktop: "Unlock these Benefits",
-    titleMobile: "Unlock these Benefits",
-    gradientWords: ["Benefits"],
-    gradient: "bg-gradient-to-r from-purple-400 via-pink-500 to-red-500",
-    benefits: [
-      {
-        heading: "Improved Decision-Making:",
-        description: "Make real-time, data-driven decisions for better patient outcomes.",
-      },
-      {
-        heading: "Predictive Analytics:",
-        description: "Anticipate patient needs with precision for proactive care.",
-      },
-      {
-        heading: "Automation:",
-        description: "Streamline processes from discharge summaries to prescription digitization.",
-      },
-    ],
-  },
-  {
-    titleDesktop:
-      "Explore how GudMed is <br> transforming healthcare <br> one innovation at a time.",
-    titleMobile: "Explore how GudMed is <br>transforming healthcare <br> one innovation at a time.",
-    gradientWords: ["GudMed", "transforming", "innovation"],
-    gradient: "bg-gradient-to-r from-purple-400 via-pink-500 to-red-500",
-  },
-];
+import axios from "axios";
+import { socket } from "../socket";
 
 const Slider = () => {
+  const [slides, setSlides] = useState([]);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const carouselRef = useRef();
   const [isMobile, setIsMobile] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const intervalRef = useRef(null);
 
+  // Fetch slides from the backend
+  const fetchSlides = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/api/pages");
+      setSlides(response.data);
+    } catch (error) {
+      console.error("Error fetching slides:", error);
+    }
+  };
+
+  // Setup slide fetching and real-time updates
+  useEffect(() => {
+    fetchSlides();
+    socket.on("contentUpdated", fetchSlides);
+    return () => socket.off("contentUpdated");
+  }, []);
+
+  // Handle screen size changes
   useEffect(() => {
     const updateScreenSize = () => setIsMobile(window.innerWidth < 768);
     updateScreenSize();
     window.addEventListener("resize", updateScreenSize);
-
     return () => window.removeEventListener("resize", updateScreenSize);
   }, []);
 
+  // Auto-slide logic
   useEffect(() => {
     const startAutoSlide = () => {
       intervalRef.current = setInterval(() => {
         if (!isClicked) {
           carouselRef.current?.slideNext();
         }
-      }, 5000); // Change slide every 5 seconds
+      }, 5000);
     };
-
     startAutoSlide();
-
-    return () => clearInterval(intervalRef.current); // Clear interval on component unmount
+    return () => clearInterval(intervalRef.current);
   }, [isClicked]);
 
-  // Pause auto sliding when clicking
+  // Handle manual interaction
   const handleClick = () => {
     setIsClicked(true);
-    clearInterval(intervalRef.current); // Stop auto sliding
+    clearInterval(intervalRef.current);
   };
 
   const handleMouseUp = () => {
@@ -90,12 +64,13 @@ const Slider = () => {
       if (!isClicked) {
         carouselRef.current?.slideNext();
       }
-    }, 5000); // Restart auto sliding
+    }, 5000);
   };
 
   const handleNext = () => carouselRef.current?.slideNext();
   const handlePrev = () => carouselRef.current?.slidePrev();
 
+  // Carousel settings
   const carouselSettings = {
     autoPlay: false,
     infinite: true,
@@ -109,11 +84,20 @@ const Slider = () => {
     },
   };
 
+  // Render title with gradient for specified words
   const renderTitle = (title, gradientWords, gradientClass) => {
-    const words = title.split(" ");
-    return words.map((word, index) => {
-      const isGradientWord = gradientWords.some((gradientWord) =>
-        gradientWord.includes(word)
+    const lines = (title || "").split("\n"); // Split by line breaks first
+    const gradientWordsLower = (gradientWords || []).map((word) =>
+      word.toLowerCase().trim()
+    );
+
+    // Flatten lines into words, splitting by spaces within each line
+    const allWords = lines.flatMap((line) => line.trim().split(" ").filter(Boolean));
+
+    return allWords.map((word, index) => {
+      const cleanWord = word.toLowerCase().trim().replace(/[.,!?]/g, ""); // Normalize word
+      const isGradientWord = gradientWordsLower.some(
+        (gradientWord) => cleanWord === gradientWord
       );
       return (
         <span
@@ -126,23 +110,25 @@ const Slider = () => {
     });
   };
 
+  // Render formatted title with line breaks
   const renderFormattedTitle = (title, gradientWords, gradientClass) => {
+    const safeTitle = title || ""; // Default to empty string if undefined
     if (isMobile) {
-      // Preserve <br> tags in mobile view
-      return title.split(/<br\s*\/?>/).map((chunk, index) => (
-        <React.Fragment key={index}>
-          {renderTitle(chunk, gradientWords, gradientClass)}
-          {index < title.split(/<br\s*\/?>/).length - 1 && <br />}
-        </React.Fragment>
-      ));
+      return safeTitle
+        .split(/<br\s*\/?>/)
+        .map((chunk, index) => (
+          <React.Fragment key={index}>
+            {renderTitle(chunk, gradientWords, gradientClass)}
+            {index < safeTitle.split(/<br\s*\/?>/).length - 1 && <br />}
+          </React.Fragment>
+        ));
     }
-
-    return title
+    return safeTitle
       .split(/<br\s*\/?>/)
       .map((chunk, index) => (
         <React.Fragment key={index}>
           {renderTitle(chunk, gradientWords, gradientClass)}
-          {index < title.split(/<br\s*\/?>/).length - 1 && <br />}
+          {index < safeTitle.split(/<br\s*\/?>/).length - 1 && <br />}
         </React.Fragment>
       ));
   };
@@ -160,22 +146,26 @@ const Slider = () => {
             {...carouselSettings}
             activeIndex={currentSlideIndex}
             items={slides.map((slide, index) => (
-              <div key={index} className="text-container animate__animated animate__slideInRight animate__faster">
+              <div
+                key={index}
+                className="text-container animate__animated animate__slideInRight animate__faster"
+              >
                 <h1
-                  className={`text-gray-800 text-center font-bold leading-tight ${slide.titleDesktop.length > 100
-                    ? "text-[1.5rem] sm:text-3xl lg:text-[4.6rem] md:text-2rem"
-                    : slide.titleDesktop.length > 60
-                    ? "mt-10 md:mt-0 text-[1.6rem] sm:text-4xl lg:text-7xl"
-                    : "text-5xl sm:text-5xl lg:text-8xl"
-                    } ipad-pro:text-[3rem] fold:text-[2rem] ipad-pro:leading-snug fold:leading-snug`}
+                  className={`text-gray-800 text-center font-bold leading-tight ${
+                    (slide?.titleDesktop?.length || 0) > 100
+                      ? "text-[1.5rem] sm:text-3xl lg:text-[4.6rem] md:text-2rem"
+                      : (slide?.titleDesktop?.length || 0) > 60
+                      ? "mt-10 md:mt-0 text-[1.6rem] sm:text-4xl lg:text-7xl"
+                      : "text-5xl sm:text-5xl lg:text-8xl ipad-pro:text-[3rem] fold:text-[2rem] ipad-pro:leading-snug fold:leading-snug"
+                  }`}
                 >
                   {renderFormattedTitle(
-                    isMobile ? slide.titleMobile : slide.titleDesktop,
-                    slide.gradientWords,
-                    slide.gradient
+                    isMobile ? slide?.titleMobile : slide?.titleDesktop,
+                    slide?.gradientWords,
+                    slide?.gradient || "bg-gradient-to-r from-purple-400 via-pink-500 to-red-500"
                   )}
                 </h1>
-                {slide.benefits && (
+                {slide?.benefits && slide.benefits.length > 0 && (
                   <ul className="mt-6 space-y-3 mx-auto sm:px-12">
                     {slide.benefits.map((benefit, i) => (
                       <li
@@ -183,9 +173,9 @@ const Slider = () => {
                         className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 text-center"
                       >
                         <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text font-semibold">
-                          {benefit.heading}
+                          {benefit?.heading || ""}
                         </span>{" "}
-                        <span>{benefit.description}</span>
+                        <span>{benefit?.description || ""}</span>
                       </li>
                     ))}
                   </ul>
